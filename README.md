@@ -1,0 +1,20 @@
+![serratec](https://github.com/joe-higashii/space-invaders-app/assets/129689531/00af72d8-daba-48fb-85b5-785ab362a4fd)
+
+# DESENVOLVIMENTO WEB - REACT🧩
+
+<h1 align="center">
+    e-commerce
+</h1>
+
+## DESENVOLVIMENTO SOFTWARE FULLSTACK - TURMA 10
+
+### Integrantes:
+
+### GRUPO 05
+
+### BERNARDO CAMARA SIQUEIRA DE MORAES
+### GABRIEL DA COSTA GARCIA
+### JOEDSON MENDES DE AMORIM
+### LEONARDO LUCAS DA SILVA MENDES
+### LUCAS MEDEIROS CALDAS
+### SAMARA CARREIRO DOS SANTOS
