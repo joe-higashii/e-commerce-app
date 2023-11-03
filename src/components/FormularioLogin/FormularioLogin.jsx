@@ -1,48 +1,73 @@
-import React, { useState } from "react";
-import { FormularioLoginCSS } from "./FormularioLogin";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormControl, FormLabel } from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, Button, Tooltip } from "@chakra-ui/react";
+import { api } from "../../api/api";
 
-function FormularioLogin() {
+export default function FormularioLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  const getUsers = async () => {
+    try {
+      const response = await api.get("/users");
+      setUsers(response.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Erro ao buscar dados do usuário:", error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!loading) {
+      const user = users.find((user) => user.email === email && user.senha === password);
+
+      if (user) {
+        navigate("./home");
+      }
+    }
+
     setEmail("");
     setPassword("");
-    navigate("./home");
   };
 
   return (
-    <FormularioLoginCSS>
-      <FormControl onSubmit={handleSubmit} className="form">
-        <div className="email">
-          <FormLabel htmlFor="email">E-mail</FormLabel>
-          <input
-            id="email"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="password">
-          <label htmlFor="password">Senha</label>
-          <input
-            id="password"
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Entrar</button>
-      </FormControl>
-    </FormularioLoginCSS>
+    <FormControl className="form">
+      <div className="email">
+        <FormLabel htmlFor="email">E-mail</FormLabel>
+        <Tooltip hasArrow label='O campo e-mail é obrigatório!' bg='red.600'>
+        <Input
+          id="email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => { setEmail(e.target.value) }}
+        />
+        </Tooltip>
+      </div>
+      <div className="password">
+        <FormLabel htmlFor="password">Senha</FormLabel>
+        <Tooltip hasArrow label='O campo senha é obrigatório!' bg='red.600'>
+        <Input
+          id="password"
+          type="password"
+          required
+          value={password}
+          onChange={(e) => { setPassword(e.target.value) }}
+        />
+        </Tooltip>
+      </div>
+      <br />
+      <Button onClick={handleSubmit} colorScheme='blue'>Entrar</Button>
+    </FormControl>
   );
 }
-
-export default FormularioLogin;
