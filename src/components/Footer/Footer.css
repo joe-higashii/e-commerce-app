@@ -1,0 +1,13 @@
+.section_padding{
+    padding: 4rem 4rem;
+}
+
+.footer{
+    background-color: #2d2d32;
+}
+
+.sb_footer{
+    display: flex;
+    flex-direction: column;
+    
+}

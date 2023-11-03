@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../api/api"
 import { Card, CardBody, CardFooter, Stack, Heading, Button, Text, Image } from '@chakra-ui/react'
+import NavBar from "../../components/Navbar/Navbar"
 import AccordionDesc from "../../components/Accordion/AccordionDesc"
 
 
@@ -18,6 +19,7 @@ const Produto = () => {
     }, [])
     return (
         <>
+            <NavBar />
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'
