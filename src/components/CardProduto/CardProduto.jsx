@@ -1,5 +1,6 @@
-import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button } from '@chakra-ui/react';
-
+import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton} from '@chakra-ui/react';
+import { MdAddShoppingCart } from 'react-icons/md'
+import { Link } from 'react-router-dom';
 
 const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
   return (
@@ -13,7 +14,7 @@ const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
         />
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nome}</Heading>
-          <Text>
+          <Text  textAlign="left">
             {resumo}
           </Text>
           <Text as='b' fontSize='2xl'>
@@ -27,9 +28,10 @@ const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
           <Button variant='solid' colorScheme='purple'>
             Comprar
           </Button>
-          <Button variant='outline' colorScheme='purple'>
+          <Button variant='outline' colorScheme='purple' as={Link} to={`/produto/${id}`}>
             Detalhes
           </Button>
+          <IconButton ml={5} icon={<MdAddShoppingCart />} variant='outline' colorScheme='purple'  ></IconButton>
 
         </ButtonGroup>
       </CardFooter>
