@@ -6,16 +6,23 @@ import {
     InputLeftElement,
     InputRightAddon,
     Select,
-    Stack
+    Stack,
+    Show,
+    Flex,
+    IconButton 
 } from "@chakra-ui/react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 
 export const NavBar = () => {
     return (
         <>
-            <Stack spacing={4} direction="row" align="center" m="1rem">
+            <Flex display={{base: 'block', xl:'flex'}} wrap={'nowrap'} spacing={4} direction="row" align="center" m="1rem" justifyContent={"space-between"} gap={'1rem'}>
                 <Button variant="ghost" w="xs" >Todos os Produtos</Button>
-                <Select variant='ghost' placeholder='Categorias' w="xs" />
+                <Select variant='ghost' placeholder='Categorias' w="lg">
+                    <option value='hardware'>Hardware</option>
+                    <option value='perifericos'>Perifericos</option>
+                    <option value='carburador'>Carburador de Santana</option>
+                </Select>
                 {/* SEARCHBAR */}
                 <InputGroup borderRadius={5} size="sm">
                     <InputLeftElement
@@ -33,9 +40,14 @@ export const NavBar = () => {
                     </InputRightAddon>
                 </InputGroup>
                 {/* BOTÕES LATERAIS */}
-                <Button leftIcon={<MdFavoriteBorder />} variant="ghost" w="xs" >Favoritos</Button>
-                <Button leftIcon={<MdAddShoppingCart />} variant="ghost" w="xs" >Carrinho</Button>
-            </Stack>
+                <Button breakpoint='(min-width: 481px)' leftIcon={<MdFavoriteBorder />} variant="ghost" w="16rem" >Favoritos</Button>
+                <Button breakpoint='(min-width: 481px)' leftIcon={<MdAddShoppingCart />} variant="ghost" w="16rem" >Carrinho</Button>
+            </Flex>
+                {/* NAVBAR MOBILE LATERAIS MOBILE*/}
+                {/* <Show breakpoint ='(max-width: 480px)'>
+                    <IconButton  aria-label='Favoritos' icon={<MdFavoriteBorder />} />
+                    <IconButton  aria-label='Carrinho' icon={<MdAddShoppingCart />} />
+                </Show> */}
         </>
     )
 }
