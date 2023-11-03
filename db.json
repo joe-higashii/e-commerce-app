@@ -1,0 +1,36 @@
+{
+"users": [
+    {
+        "id": 1,
+        "nome": "Raphael da Rocha Pinto Barboza",
+        "email": "raphael@email.com",
+        "senha": "123456"
+    }
+],
+
+"produtos": [
+    {
+        "id": 1,
+        "nome": "Mouse com fio Logitech",
+        "preco": 29.99,
+        "quantidade": 37,
+        "descricao": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+        "imgurl": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",      
+        "favoritos": 30
+    }
+],
+
+"pedidos": [
+    {
+        "id": 1,
+        "valorTotal": 299.9,
+        "idUser": 1,
+        "itens": [
+            {
+                "idProduto": 1,
+                "quantidade": 10
+            }
+        ]
+    }
+]
+}
