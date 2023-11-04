@@ -2,12 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import CardProduto from "../../components/CardProduto/CardProduto";
 import { api } from "../../api/api";
 import { Grid, GridItem } from "@chakra-ui/react";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar.jsx";
 import { GeralContext } from "../../context/GeralContext";
 
 const ListaProdutos = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("");
 
   const getProdutos = async () => {
     const response = await api.get("/produtos");
@@ -17,25 +16,6 @@ const ListaProdutos = () => {
   useEffect(() => {
     getProdutos();
   }, []);
-
-  useEffect(() => {
-    if (categoriaSelecionada) {
-      const getProdutosPorCategoria = async () => {
-        try {
-          const response = await api.get(
-            `/produtos?categoria=${categoriaSelecionada}`
-          );
-          setProdutos(response.data);
-        } catch (error) {
-          console.error("");
-        }
-      };
-
-      getProdutosPorCategoria();
-    } else {
-      getProdutos();
-    }
-  }, [categoriaSelecionada]);
 
   return (
     <>

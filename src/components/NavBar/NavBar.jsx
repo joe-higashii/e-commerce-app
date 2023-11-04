@@ -11,7 +11,7 @@ import {
   Flex,
   IconButton,
 } from "@chakra-ui/react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
@@ -19,14 +19,23 @@ import { GeralContext } from "../../context/GeralContext";
 
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
+  const { categoria, setCategoria } = useContext(GeralContext);
   const navigate = useNavigate();
 
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("");
-
   const handleCategoriaChange = async (e) => {
-    const categoriaSelecionada = e.target.value;
+    const categoria = e.target.value;
     const response = await api.get("/produtos", {
-      params: { categoria: categoriaSelecionada },
+      params: { categoria: categoria },
+    });
+    setProdutos(response.data);
+    console.log(response.data);
+    navigate("/lista/produtos");
+  };
+
+  const getProdutos = async (e) => {
+    const produto = e.target.value;
+    const response = await api.get("/produtos", {
+      params: { produto: produto },
     });
     setProdutos(response.data);
     console.log(response.data);
@@ -45,14 +54,14 @@ export const NavBar = () => {
         justifyContent={"space-between"}
         gap={"1rem"}
       >
-        <Button variant="ghost" w="xs">
+        <Button onClick={getProdutos} variant="ghost" w="xs">
           Todos os Produtos
         </Button>
         <Select
           variant="ghost"
-          placeholder="Categorias"
+          // placeholder="Categorias"
           w="lg"
-          defaultValue={categoriaSelecionada}
+          defaultValue={categoria}
           onChange={handleCategoriaChange}
         >
           <option value={"Hardware"}>Hardware</option>

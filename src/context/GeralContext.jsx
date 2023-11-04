@@ -4,7 +4,7 @@ export const GeralContext = createContext({});
 
 export const GeralProvider = ({ children }) => {
   const [produtos, setProdutos] = useState([]);
-  const [nome, setNome] = useState('')
+  const [categoria, setCategoria] = useState('')
 
-  return <GeralContext.Provider value={{produtos, setProdutos, nome, setNome}}>{children}</GeralContext.Provider>;
+  return <GeralContext.Provider value={{produtos, setProdutos, categoria, setCategoria}}>{children}</GeralContext.Provider>;
 };
