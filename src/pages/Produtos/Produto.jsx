@@ -18,18 +18,18 @@ import {
 import NavBar from "../../components/Navbar/NavBar.jsx";
 import AccordionDesc from "../../components/Accordion/AccordionDesc";
 import { MdAddShoppingCart } from "react-icons/md";
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
-
 
 const Produto = () => {
   const [produto, setProduto] = useState({});
   const { id } = useParams();
-  const { carrinhoUsuario, adicionarProdutoAoCarrinho } = useContext(UserContext);
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
+    useContext(UserContext);
 
   const handleAdicionarAoCarrinho = () => {
     adicionarProdutoAoCarrinho(produto);
-    console.log(handleAdicionarAoCarrinho)
+    console.log(handleAdicionarAoCarrinho);
   };
 
   const getProduto = async () => {
@@ -93,8 +93,8 @@ const Produto = () => {
               icon={<MdAddShoppingCart />}
               variant="outline"
               colorScheme="purple"
-              onClick={handleAdicionarAoCarrinho}
-            ></IconButton>
+              onClick={() => adicionarProdutoAoCarrinho(produto)}
+            />
           </Box>
         </GridItem>
       </Grid>
