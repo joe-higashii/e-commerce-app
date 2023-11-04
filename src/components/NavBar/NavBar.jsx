@@ -17,13 +17,14 @@ import { useContext } from "react"
 import CarrinhoDrawer from "../Drawer/CarrinhoDrawer";
 import { Link } from "react-router-dom";
 
+
 export const NavBar = () => {
     const { nome, idUser } = useContext(UserContext)
 
     return (
         <>
             <Flex display={{base: 'block', xl:'flex'}} wrap={'nowrap'} spacing={4} direction="row" align="center" m="1rem" justifyContent={"space-between"} gap={'1rem'}>
-                <Button variant="ghost" w="xs" >Todos os Produtos</Button>
+                <Button as={Link} to={`/lista/produtos`} variant="ghost" w="xs" >Todos os Produtos</Button>
                 <Select variant='ghost' placeholder='Categorias' w="lg">
                     <option value='hardware'>Hardware</option>
                     <option value='perifericos'>Perifericos</option>

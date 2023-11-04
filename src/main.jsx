@@ -11,6 +11,8 @@ import Pedidos from './pages/Pedidos/Pedidos.jsx'
 import { ChakraProvider } from "@chakra-ui/react";
 import Produto from './pages/Produtos/Produto.jsx';
 import { UserContext, UserProvider } from './context/UserContext.jsx'
+import CardCarrinho from './components/CardCarrinho/CardCarrinho.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/pedidos",
     element: <Pedidos/>,
+  },
+  {
+    path: "/card/:id",
+    element: <CardCarrinho/>,
+
   }
 ]);
 
