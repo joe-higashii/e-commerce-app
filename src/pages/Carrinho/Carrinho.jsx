@@ -1,12 +1,16 @@
-import React from 'react'
-import NavBar from '../../components/Navbar/Navbar'
+import React, { useContext } from 'react';
+import NavBar from '../../components/Navbar/NavBar.jsx'
 import FinalizarCompraStepper from '../../components/Stepper/FinalizarCompraStepper'
 import { Grid, GridItem, Input, Text, Flex, Button, Tabs, TabList, TabPanel, TabPanels, Tab } from '@chakra-ui/react'
 import { MdRemoveShoppingCart, MdAirportShuttle } from "react-icons/md";
 import FormCarrinhoSumario from '../../components/Forms/FormCarrinhoSumario';
 import Footer from '../../components/Footer/Footer';
+import { UserContext } from "../../context/UserContext.jsx";
+import CardCarrinho from '../../components/CardCarrinho/CardCarrinho.jsx';
 
 function Carrinho() {
+    const { user } = useContext(UserContext);
+
     return (
         <>
 
@@ -32,20 +36,14 @@ function Carrinho() {
                             padding={'1rem'}
                         >
                             {/* Produtos */}
-                            <GridItem rowSpan={4} colSpan={3} padding={'1rem'} border={'1px solid #D9D9D9'} borderRadius={'12px'} >
-                                <Flex
-                                    flexDirection={'row'}
-                                    alignItems={'center'}
-                                    justifyContent={'space-between'}
-                                    mb={'1rem'}>
-                                    <Text><strong strong>PRODUTOS DO CARRINHO</strong></Text>
-                                    <Button colorScheme="red" variant={'outline'} leftIcon={<MdRemoveShoppingCart />}><strong strong>  REMOVER TODOS OS PRODUTOS</strong></Button>
-                                </Flex>
-                                <Flex>
-
-                                </Flex>
-                                <hr />
-
+                            <GridItem rowSpan={4} colSpan={3} padding={'1rem'} border={'1px solid #D9D9D9'} borderRadius={'12px'}>
+                            <Flex flexDirection={'column'} alignItems={'flex-start'} justifyContent={'space-between'}>
+                                <Text fontSize="xl" fontWeight="bold">PRODUTOS DO CARRINHO</Text>
+                                {user.carrinhoUsuario.map((produto) => (
+                                <CardCarrinho key={produto.id} produto={produto} />
+                                ))}
+                            </Flex>
+                            <hr />
                             </GridItem>
                             {/* Resumo */}
                             <GridItem rowSpan={5} colSpan={2} border={'1px solid #D9D9D9'} borderRadius={'12px'} >
