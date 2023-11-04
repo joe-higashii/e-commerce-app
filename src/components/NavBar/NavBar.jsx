@@ -13,7 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
 import { GeralContext } from "../../context/GeralContext";
@@ -32,6 +32,31 @@ export const NavBar = () => {
     setProdutos(response.data);
     console.log(response.data);
     navigate("/lista/produtos");
+  };
+
+  const inputRef = useRef();
+  const handlePesquisarInput = async (e) => {
+    // Wait for the value of the input element to be updated before calling the filter function.
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    
+    const produto = inputRef.current.value;
+    console.log(produto)
+    const response = await api.get("/produtos", {
+    params: { produto: produto },
+    });
+    const filteredProducts = response.data.filter((product) => {
+    console.log(product.nome)
+    return product.nome.toLowerCase().includes(produto.toLowerCase());
+    });
+    setProdutos(filteredProducts);
+    console.log(filteredProducts);
+    navigate("/lista/produtos");
+    };
+  
+  //FAZER A PESQUISA CLICANDO NO BUTTON
+  const handlePesquisaChange = async (e) => {
+    const produto = e.target.value;
+    handlePesquisarInput();
   };
 
   const getProdutos = async (e) => {
@@ -96,10 +121,11 @@ export const NavBar = () => {
           <Input
             type="text"
             placeholder="Search..."
+            ref={inputRef}
             border="1px solid #949494"
           />
           <InputRightAddon p={0} border="none">
-            <Button
+            <Button onClick={handlePesquisaChange}
               size="sm"
               borderLeftRadius={0}
               borderRightRadius={3.3}
