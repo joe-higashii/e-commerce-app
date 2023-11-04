@@ -32,7 +32,7 @@ export default function FormularioLogin() {
       const user = users.find((user) => user.email === email && user.senha === password);
 
       if (user) {
-        navigate("./home");
+        navigate("/home");
       }
     }
 

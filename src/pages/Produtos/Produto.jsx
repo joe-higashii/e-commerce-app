@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { api } from "../../api/api"
 import { Card, CardBody, CardFooter, Stack, Heading, Button, Text, Image } from '@chakra-ui/react'
-import NavBar from "../../components/Navbar/Navbar"
+import NavBar from "../../components/NavBar/NavBar"
 import AccordionDesc from "../../components/Accordion/AccordionDesc"
 
 
@@ -55,7 +55,6 @@ const Produto = () => {
             </Card>
             <br />
             <AccordionDesc descricao={produto.descricao} />
-           
         </>
     )
 }
