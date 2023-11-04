@@ -1,74 +1,97 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { api } from "../../api/api"
-import { Box, Heading, Button, Text, Image, Grid, GridItem, IconButton } from '@chakra-ui/react'
-import NavBar from "../../components/Navbar/Navbar"
-import AccordionDesc from "../../components/Accordion/AccordionDesc"
-import { MdAddShoppingCart } from 'react-icons/md'
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { api } from "../../api/api";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Card,
+  CardBody,
+  CardFooter,
+  Stack,
+  Heading,
+  Button,
+  IconButton,
+  Text,
+  Image,
+} from "@chakra-ui/react";
+import NavBar from "../../components/Navbar/NavBar.jsx";
+import AccordionDesc from "../../components/Accordion/AccordionDesc";
+import { MdAddShoppingCart } from "react-icons/md";
 
 const Produto = () => {
-    const [produto, setProduto] = useState({})
-    const { id } = useParams()
+  const [produto, setProduto] = useState({});
+  const { id } = useParams();
 
-    const getProduto = async () => {
-        const response = await api.get(`/produtos/${id}`)
-        setProduto(response.data)
-    }
-    useEffect(() => {
-        getProduto()
-    }, [])
-    return (
-        <>
-            <NavBar />
-            <Grid
-                h='300px'
-                w='80%'
-                justifyContent="center"
-                alignContent="center"
-                templateRows='repeat(3, 1fr)'
-                templateColumns='repeat(3, 1fr)'
-                gap={3}
-                padding={'1rem'}
+  const getProduto = async () => {
+    const response = await api.get(`/produtos/${id}`);
+    setProduto(response.data);
+  };
+  useEffect(() => {
+    getProduto();
+  }, []);
+  return (
+    <>
+      <NavBar />
+      <Grid
+        h="300px"
+        w="80%"
+        justifyContent="center"
+        alignContent="center"
+        templateRows="repeat(3, 1fr)"
+        templateColumns="repeat(3, 1fr)"
+        gap={3}
+        padding={"1rem"}
+      >
+        <GridItem
+          rowSpan={4}
+          colSpan={1}
+          alignSelf={"center"}
+          justifySelf={"center"}
+        >
+          <Image
+            objectFit="contain"
+            maxW={{ base: "90%", sm: "200px" }}
+            src={produto.imagem}
+            alt="Caffe Latte"
+          />
+        </GridItem>
 
+        <GridItem h={10} rowSpan={1} colSpan={2}>
+          <Heading size="md">{produto.nome}</Heading>
+        </GridItem>
+
+        <GridItem rowSpan={2} colSpan={2}>
+          <Text py="2">{produto.resumo}</Text>
+        </GridItem>
+
+        <GridItem h="10" colSpan={2}>
+          <Box display="flex" alignItems="center" justifyContent={"center"}>
+            <Text as="b" fontSize="4xl" w="200px">
+              R${produto.preco}
+            </Text>
+            <Button
+              ml={2}
+              fontWeight="bold"
+              w="200px"
+              variant="solid"
+              colorScheme="purple"
             >
-                <GridItem rowSpan={4} colSpan={1} alignSelf={"center"} justifySelf={"center"}> 
-                    <Image
-                        objectFit='contain'
-                        maxW={{ base: '90%', sm: '200px' }}
+              COMPRAR
+            </Button>
+            <IconButton
+              ml={5}
+              icon={<MdAddShoppingCart />}
+              variant="outline"
+              colorScheme="purple"
+            ></IconButton>
+          </Box>
+        </GridItem>
+      </Grid>
 
-                        src={produto.imagem}
-                        alt='Caffe Latte'
-                    />
-                </GridItem>
-
-                <GridItem h={10} rowSpan={1} colSpan={2} >
-                    <Heading size='md'>{produto.nome}</Heading>
-                </GridItem>
-
-                <GridItem rowSpan={2} colSpan={2}><Text py='2'>
-                    {produto.resumo}
-                </Text>
-                </GridItem>
-
-                <GridItem h='10' colSpan={2} >
-                <Box display="flex" alignItems="center" justifyContent={"center"}>
-                    <Text as='b' fontSize='4xl'w="200px">
-                        R${produto.preco}
-                    </Text>
-                    <Button ml={2} fontWeight="bold" w="200px" variant='solid' colorScheme='purple'>
-                        COMPRAR
-                    </Button>
-                    <IconButton ml={5} icon={<MdAddShoppingCart />} variant='outline' colorScheme='purple'  ></IconButton>
-               </Box>
-                </GridItem>
-
-            </Grid>
-
-            <br />
-            <AccordionDesc descricao={produto.descricao} />
-
-        </>
-    )
-}
-export default Produto
+      <br />
+      <AccordionDesc descricao={produto.descricao} />
+    </>
+  );
+};
+export default Produto;
