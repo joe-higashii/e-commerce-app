@@ -4,7 +4,13 @@
         "id": 1,
         "nome": "Raphael da Rocha Pinto Barboza",
         "email": "raphael@email.com",
-        "senha": "123456"
+        "senha": "123456",
+        "carrinhoUsuario": [
+            {
+                "idProduto": 1,
+                "quantidade": 2
+            }
+        ] 
     }
 ],
 
@@ -118,6 +124,25 @@
         "valorTotal": 299.9,
         "idUser": 1,
         "itens": [
+            {
+                "idProduto": 2,
+                "quantidade": 10
+            },
+            {
+                "idProduto": 1,
+                "quantidade": 10
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "valorTotal": 299.9,
+        "idUser": 1,
+        "itens": [
+            {
+                "idProduto": 2,
+                "quantidade": 10
+            },
             {
                 "idProduto": 1,
                 "quantidade": 10

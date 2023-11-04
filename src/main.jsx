@@ -10,6 +10,8 @@ import Carrinho from "./pages/Carrinho/Carrinho.jsx";
 import { ChakraProvider } from "@chakra-ui/react";
 import Produto from "./pages/Produtos/Produto.jsx";
 import { GeralProvider } from "./context/GeralContext.jsx";
+import Pedidos from './pages/Pedidos/Pedidos.jsx'
+import { UserContext, UserProvider } from './context/UserContext.jsx'
 import CardCarrinho from './components/CardCarrinho/CardCarrinho.jsx';
 
 const router = createBrowserRouter([
@@ -34,8 +36,13 @@ const router = createBrowserRouter([
     element: <Carrinho/>,
   },
   {
+    path: "/pedidos",
+    element: <Pedidos/>,
+  },
+  {
     path: "/card/:id",
     element: <CardCarrinho/>,
+
   }
 ]);
 
@@ -43,7 +50,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <GeralProvider>
+       <UserProvider>
         <RouterProvider router={router} />
+        </UserProvider>
       </GeralProvider>
     </ChakraProvider>
   </React.StrictMode>
