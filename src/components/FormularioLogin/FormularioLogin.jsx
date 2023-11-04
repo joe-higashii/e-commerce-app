@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormControl, FormLabel, Input, Button, Tooltip } from "@chakra-ui/react";
 import { api } from "../../api/api";
+import { UserContext } from "../../context/UserContext";
 
 export default function FormularioLogin() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ export default function FormularioLogin() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { nome, setNome, idUser, setIdUser} = useContext(UserContext)
 
   const getUsers = async () => {
     try {
@@ -32,6 +34,8 @@ export default function FormularioLogin() {
       const user = users.find((user) => user.email === email && user.senha === password);
 
       if (user) {
+        setNome(user.nome);
+        setIdUser(user.id);
         navigate("./home");
       }
     }
