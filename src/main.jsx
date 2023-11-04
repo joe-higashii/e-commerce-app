@@ -9,6 +9,7 @@ import ListaProdutos from './pages/ListaProdutos/ListaProdutos.jsx';
 import Carrinho from './pages/Carrinho/Carrinho.jsx';
 import { ChakraProvider } from "@chakra-ui/react";
 import Produto from './pages/Produtos/Produto.jsx';
+import CardCarrinho from './components/CardCarrinho/CardCarrinho.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/carrinho/",
     element: <Carrinho/>,
+  },
+  {
+    path: "/card/:id",
+    element: <CardCarrinho/>,
   }
 ]);
 
