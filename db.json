@@ -7,7 +7,7 @@
         "senha": "123456",
         "carrinhoUsuario": [
             {
-                "idProduto": 1,
+                "id": 1,
                 "quantidade": 2
             }
         ] 
