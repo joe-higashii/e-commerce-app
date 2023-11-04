@@ -13,11 +13,22 @@ export const UserProvider = ({ children }) => {
         carrinhoUsuario: [],
     });
 
+    const getProdutosDoCarrinho = async () => {
+        try {
+            const response = await api.get(`/users/${user.id}`);
+            const carrinhoDoBanco = response.data.carrinhoUsuario || [];
+            setCarrinhoUsuario(carrinhoDoBanco);
+        } catch (error) {
+            console.error("Erro ao carregar produtos do carrinho do usuário", error);
+        }
+    };
+
     useEffect(() => {
         const fetchUserData = async () => {
             try {
                 const response = await api.get(`/users/${user.id}`);
                 setUser(response.data);
+                getProdutosDoCarrinho();
             } catch (error) {
                 console.error("Erro ao carregar dados do usuário", error);
             }
@@ -56,7 +67,7 @@ export const UserProvider = ({ children }) => {
     };
 
     return (
-        <UserContext.Provider value={{ user, setUser, adicionarProdutoAoCarrinho, nome, setNome, idUser, setIdUser }}>
+        <UserContext.Provider value={{ user, setUser, adicionarProdutoAoCarrinho, nome, setNome, idUser, setIdUser, carrinhoUsuario }}>
             {children}
         </UserContext.Provider>
     );

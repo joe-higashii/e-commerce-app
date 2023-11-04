@@ -1,73 +1,37 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { api } from "../../api/api"
-import { Box, Heading, Button, Text, Image, Grid, GridItem, Card } from '@chakra-ui/react'
-import { Input } from "postcss"
+import React from 'react';
+import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton} from '@chakra-ui/react';
+import { MdAddShoppingCart } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
+const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, id }) => {
+  return (
+    <Card w='300px' h='450px' >
+      <CardBody>
+        <Image
+          src={imagem}
+          alt={nome}
+          borderRadius='lg'
+          boxSize='150px'
+        />
+        <Stack mt='6' spacing='3'>
+          <Heading size='md'>{nome}</Heading>
+          <Text fontSize='xl'>Quantidade: {quantidade}</Text>
+          <Text as='b' fontSize='2xl'>
+            R${preco}
+          </Text>
+        </Stack>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <ButtonGroup spacing='2'>
+          <Button variant='outline' colorScheme='purple' as={Link} to={`/produto/${id}`}>
+            Detalhes
+          </Button>
+          <IconButton ml={5} icon={<MdAddShoppingCart />} variant='outline' colorScheme='purple'  ></IconButton>
+        </ButtonGroup>
+      </CardFooter>
+    </Card>
+  );
+};
 
-const CardCarrinho = () => {
-    const [produto, setProduto] = useState({})
-    const { id } = useParams()
-
-    const getProduto = async () => {
-        const response = await api.get(`/produtos/${id}`)
-        setProduto(response.data)
-    }
-    useEffect(() => {
-        getProduto()
-    }, [])
-
-    function HookUsage() {
-        const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
-            useNumberInput({
-                step: 1,
-                defaultValue: 1,
-                min: 1,
-                max: 6,
-                precision: 0,
-            })
-
-        const inc = getIncrementButtonProps()
-        const dec = getDecrementButtonProps()
-        const input = getInputProps()
-
-        return (
-            <HStack maxW='140px'>
-                <Button {...dec}>-</Button>
-                <Input {...input} />
-                <Button {...inc}>+</Button>
-            </HStack>
-        )
-    }
-
-    return (
-        <>
-            <Card w='600px' h='100px' >
-                <Grid templateColumns='repeat(2, 1fr)' gap={2}>
-                    <GridItem w='100%' h='20' display="flex" alignItems="center">
-                        <GridItem>
-                            <Image
-                                objectFit='cover'
-                                maxW={{ base: '90%', sm: '30px' }}
-                                src={produto.imagem}
-                                alt={produto.nome}
-                            />
-                        </GridItem>
-                        <GridItem>
-                            <div>
-                                <Heading size='md' textAlign='left' fontSize='sm'>
-                                    {produto.nome}
-                                </Heading>
-                                <Text textAlign='left' fontSize='sm'>
-                                    {produto.resumo}
-                                </Text>
-                            </div>
-                        </GridItem>
-                    </GridItem>
-                    <GridItem w='100%' h='20'></GridItem>
-                </Grid>
-            </Card>
-        </>
-    )
-}
-export default CardCarrinho
+export default CardCarrinhoItem;
