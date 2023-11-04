@@ -10,12 +10,14 @@ import {
   Show,
   Flex,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
 import { GeralContext } from "../../context/GeralContext";
+import { FaGitkraken } from "react-icons/fa";
 
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
@@ -42,6 +44,18 @@ export const NavBar = () => {
     navigate("/lista/produtos");
   };
 
+  const navigateFavoritos = () => {
+    navigate("/favoritos");
+  }
+
+  const navigateCarrinho = () => {
+    navigate("/carrinho");
+  }
+
+  const navigateHome = () => {
+    navigate("/home");
+  }
+
   return (
     <>
       <Flex
@@ -54,7 +68,11 @@ export const NavBar = () => {
         justifyContent={"space-between"}
         gap={"1rem"}
       >
-        <Button onClick={getProdutos} variant="ghost" w="xs">
+        {/* <FaGitkraken /> */}
+        <Text onClick={navigateHome} mr={'2rem'} fontSize={'2rem'} mb={'.5rem'} >
+          <a href=""><strong> KRAKEN</strong></a>
+        </Text>
+        <Button onClick={getProdutos} variant="ghost" w="sm">
           Todos os Produtos
         </Button>
         <Select
@@ -93,6 +111,7 @@ export const NavBar = () => {
         </InputGroup>
         {/* BOTÕES LATERAIS */}
         <Button
+          onClick={navigateFavoritos}
           breakpoint="(min-width: 481px)"
           leftIcon={<MdFavoriteBorder />}
           variant="ghost"
@@ -101,6 +120,7 @@ export const NavBar = () => {
           Favoritos
         </Button>
         <Button
+          onClick={navigateCarrinho}
           breakpoint="(min-width: 481px)"
           leftIcon={<MdAddShoppingCart />}
           variant="ghost"

@@ -1,8 +1,17 @@
-import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton} from '@chakra-ui/react';
+import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton } from '@chakra-ui/react';
 import { MdAddShoppingCart } from 'react-icons/md'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AdicionarAoCarrinhoToast from '../Toast/AdicionarAoCarrinhoToast';
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
-const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
+const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
+  const [isFavorito, setIsFavorito] = useState(favorito);
+
+  const favoritar = () => {
+    setIsFavorito(!isFavorito);
+  };
+
   return (
     <Card w='300px' h='450px' >
       <CardBody>
@@ -12,6 +21,7 @@ const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
           borderRadius='lg'
           boxSize='150px'
         />
+        {/* {isFavorito ? <AiFillHeart color="#b90000" size={25} onClick={favoritar} /> : <AiOutlineHeart size={25} onClick={favoritar} />}         */}
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nome}</Heading>
           <Text  textAlign="left">
@@ -31,8 +41,7 @@ const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
           <Button variant='outline' colorScheme='purple' as={Link} to={`/produto/${id}`}>
             Detalhes
           </Button>
-          <IconButton ml={5} icon={<MdAddShoppingCart />} variant='outline' colorScheme='purple'  ></IconButton>
-
+          <AdicionarAoCarrinhoToast />
         </ButtonGroup>
       </CardFooter>
     </Card>

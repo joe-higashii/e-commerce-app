@@ -15,7 +15,8 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
-import NavBar from "../../components/Navbar/NavBar.jsx";
+import NavBar from "../../components/Navbar/Navbar.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 import AccordionDesc from "../../components/Accordion/AccordionDesc";
 import { MdAddShoppingCart } from "react-icons/md";
 
@@ -91,6 +92,7 @@ const Produto = () => {
 
       <br />
       <AccordionDesc descricao={produto.descricao} />
+      <Footer />
     </>
   );
 };

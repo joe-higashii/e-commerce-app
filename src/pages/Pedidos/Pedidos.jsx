@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react"
 import { api } from "../../api/api"
 import NavBar from "../../components/Navbar/Navbar"
+import Footer from "../../components/Footer/Footer";
 import { UserContext } from "../../context/UserContext";
 import CardProduto from "../../components/CardProduto/CardProduto"
 import { Grid, GridItem } from '@chakra-ui/react'
@@ -123,6 +124,7 @@ const Pedidos = () => {
                     </div>
                 ))}
         </Grid>
+        <Footer />
         </div>
     )
 }
