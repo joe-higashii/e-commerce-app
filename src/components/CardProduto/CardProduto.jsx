@@ -1,8 +1,14 @@
 import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton} from '@chakra-ui/react';
 import { MdAddShoppingCart } from 'react-icons/md'
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
+import { useContext } from 'react';
 
 const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
+  const produto = { nome, imagem, resumo, preco, id };
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
+  useContext(UserContext);
+
   return (
     <Card w='300px' h='450px' >
       <CardBody>
@@ -31,8 +37,13 @@ const CardProduto = ({ nome, imagem, resumo, preco, id }) => {
           <Button variant='outline' colorScheme='purple' as={Link} to={`/produto/${id}`}>
             Detalhes
           </Button>
-          <IconButton ml={5} icon={<MdAddShoppingCart />} variant='outline' colorScheme='purple'  ></IconButton>
-
+          <IconButton
+              ml={5}
+              icon={<MdAddShoppingCart />}
+              variant="outline"
+              colorScheme="purple"
+              onClick={() => adicionarProdutoAoCarrinho(produto)}
+            />
         </ButtonGroup>
       </CardFooter>
     </Card>

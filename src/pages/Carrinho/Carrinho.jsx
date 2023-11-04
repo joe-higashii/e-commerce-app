@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import NavBar from "../../components/Navbar/NavBar.jsx";
 import FinalizarCompraStepper from "../../components/Stepper/FinalizarCompraStepper";
 import {
@@ -21,7 +21,21 @@ import { UserContext } from "../../context/UserContext.jsx";
 import CardCarrinho from "../../components/CardCarrinho/CardCarrinho.jsx";
 
 function Carrinho() {
-  const { user, carrinhoUsuario } = useContext(UserContext);
+  const { user, carrinhoUsuario, setCarrinhoUsuario, adicionarProdutoAoCarrinho } = useContext(UserContext);
+  
+  useEffect(() => {
+    const getProdutosDoCarrinho = async () => {
+      try {
+        const response = await api.get(`/users/${user.id}`);
+        const carrinhoDoBanco = response.data.carrinhoUsuario || [];
+        setCarrinhoUsuario(carrinhoDoBanco);
+      } catch (error) {
+        console.error("Erro ao carregar produtos do carrinho do usuário", error);
+      }
+    };
+
+    getProdutosDoCarrinho();
+  }, [user.id, setCarrinhoUsuario]);
 
   return (
     <>
