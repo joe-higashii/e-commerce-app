@@ -12,9 +12,15 @@ import {
     IconButton 
 } from "@chakra-ui/react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react"
+import CarrinhoDrawer from "../Drawer/CarrinhoDrawer";
+import { Link } from "react-router-dom";
+
 
 export const NavBar = () => {
+    const { nome, idUser } = useContext(UserContext)
+
     return (
         <>
             <Flex display={{base: 'block', xl:'flex'}} wrap={'nowrap'} spacing={4} direction="row" align="center" m="1rem" justifyContent={"space-between"} gap={'1rem'}>
@@ -41,8 +47,11 @@ export const NavBar = () => {
                     </InputRightAddon>
                 </InputGroup>
                 {/* BOTÕES LATERAIS */}
+                <p> Olá {nome} {idUser}</p>
+                <Link to='/pedidos'>Teste</Link>
                 <Button breakpoint='(min-width: 481px)' leftIcon={<MdFavoriteBorder />} variant="ghost" w="16rem" >Favoritos</Button>
-                <Button breakpoint='(min-width: 481px)' leftIcon={<MdAddShoppingCart />} variant="ghost" w="16rem" >Carrinho</Button>
+                {/* <Button breakpoint='(min-width: 481px)' leftIcon={<MdAddShoppingCart />} variant="ghost" w="16rem" >Carrinho</Button> */}
+                <CarrinhoDrawer/>
             </Flex>
                 {/* NAVBAR MOBILE LATERAIS MOBILE*/}
                 {/* <Show breakpoint ='(max-width: 480px)'>
