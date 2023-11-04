@@ -59,13 +59,6 @@ export const NavBar = () => {
           <option value={"Periféricos"}>Periféricos</option>
           <option value={"Cama"}>Cama</option>
           <option value={"banho"}>banho</option>
-          {/* {categorias.map((c) => {
-            return (
-              <option key={c.id} value={c.nome}>
-                {c.nome}
-              </option>
-            );
-          })} */}
         </Select>
         {/* SEARCHBAR */}
         <InputGroup borderRadius={5} size="sm">

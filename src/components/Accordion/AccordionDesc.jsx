@@ -11,7 +11,7 @@ import './AccordionDesc.css'
 
 const AccordionDesc = ({descricao}) => {
     return (
-        <Accordion w={'800px'} defaultIndex={[0]} allowMultiple>
+        <Accordion w={'100%'} defaultIndex={[0]} allowMultiple>
   <AccordionItem>
     <h2>
       <AccordionButton>
