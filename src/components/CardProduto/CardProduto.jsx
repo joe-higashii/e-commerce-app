@@ -4,9 +4,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AdicionarAoCarrinhoToast from '../Toast/AdicionarAoCarrinhoToast';
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { UserContext } from '../../context/UserContext';
+import { useContext } from 'react';
 
 const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
   const [isFavorito, setIsFavorito] = useState(favorito);
+  const produto = { nome, imagem, resumo, preco, id };
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
+  useContext(UserContext);
 
   const favoritar = () => {
     setIsFavorito(!isFavorito);
@@ -42,6 +47,13 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
             Detalhes
           </Button>
           <AdicionarAoCarrinhoToast />
+          <IconButton
+              ml={5}
+              icon={<MdAddShoppingCart />}
+              variant="outline"
+              colorScheme="purple"
+              onClick={() => adicionarProdutoAoCarrinho(produto)}
+            />
         </ButtonGroup>
       </CardFooter>
     </Card>

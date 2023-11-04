@@ -19,10 +19,19 @@ import NavBar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import AccordionDesc from "../../components/Accordion/AccordionDesc";
 import { MdAddShoppingCart } from "react-icons/md";
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext.jsx";
 
 const Produto = () => {
   const [produto, setProduto] = useState({});
   const { id } = useParams();
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
+    useContext(UserContext);
+
+  const handleAdicionarAoCarrinho = () => {
+    adicionarProdutoAoCarrinho(produto);
+    console.log(handleAdicionarAoCarrinho);
+  };
 
   const getProduto = async () => {
     const response = await api.get(`/produtos/${id}`);
@@ -85,7 +94,8 @@ const Produto = () => {
               icon={<MdAddShoppingCart />}
               variant="outline"
               colorScheme="purple"
-            ></IconButton>
+              onClick={() => adicionarProdutoAoCarrinho(produto)}
+            />
           </Box>
         </GridItem>
       </Grid>
