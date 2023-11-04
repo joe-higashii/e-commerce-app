@@ -10,12 +10,14 @@ import {
   Show,
   Flex,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
 import { GeralContext } from "../../context/GeralContext";
+import { FaGitkraken } from "react-icons/fa";
 
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
@@ -32,6 +34,31 @@ export const NavBar = () => {
     navigate("/lista/produtos");
   };
 
+  const inputRef = useRef();
+  const handlePesquisarInput = async (e) => {
+    // Wait for the value of the input element to be updated before calling the filter function.
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    
+    const produto = inputRef.current.value;
+    console.log(produto)
+    const response = await api.get("/produtos", {
+    params: { produto: produto },
+    });
+    const filteredProducts = response.data.filter((product) => {
+    console.log(product.nome)
+    return product.nome.toLowerCase().includes(produto.toLowerCase());
+    });
+    setProdutos(filteredProducts);
+    console.log(filteredProducts);
+    navigate("/lista/produtos");
+    };
+  
+  //FAZER A PESQUISA CLICANDO NO BUTTON
+  const handlePesquisaChange = async (e) => {
+    const produto = e.target.value;
+    handlePesquisarInput();
+  };
+
   const getProdutos = async (e) => {
     const produto = e.target.value;
     const response = await api.get("/produtos", {
@@ -41,6 +68,18 @@ export const NavBar = () => {
     console.log(response.data);
     navigate("/lista/produtos");
   };
+
+  const navigateFavoritos = () => {
+    navigate("/favoritos");
+  }
+
+  const navigateCarrinho = () => {
+    navigate("/carrinho");
+  }
+
+  const navigateHome = () => {
+    navigate("/home");
+  }
 
   const handleCarrinhoClick = () => {
     navigate("/carrinho");
@@ -58,7 +97,11 @@ export const NavBar = () => {
         justifyContent={"space-between"}
         gap={"1rem"}
       >
-        <Button onClick={getProdutos} variant="ghost" w="xs">
+        {/* <FaGitkraken /> */}
+        <Text onClick={navigateHome} mr={'2rem'} fontSize={'2rem'} mb={'.5rem'} >
+          <a href=""><strong> KRAKEN</strong></a>
+        </Text>
+        <Button onClick={getProdutos} variant="ghost" w="sm">
           Todos os Produtos
         </Button>
         <Select
@@ -82,10 +125,11 @@ export const NavBar = () => {
           <Input
             type="text"
             placeholder="Search..."
+            ref={inputRef}
             border="1px solid #949494"
           />
           <InputRightAddon p={0} border="none">
-            <Button
+            <Button onClick={handlePesquisaChange}
               size="sm"
               borderLeftRadius={0}
               borderRightRadius={3.3}
@@ -97,6 +141,7 @@ export const NavBar = () => {
         </InputGroup>
         {/* BOTÕES LATERAIS */}
         <Button
+          onClick={navigateFavoritos}
           breakpoint="(min-width: 481px)"
           leftIcon={<MdFavoriteBorder />}
           variant="ghost"
@@ -105,6 +150,7 @@ export const NavBar = () => {
           Favoritos
         </Button>
         <Button
+          onClick={navigateCarrinho}
           breakpoint="(min-width: 481px)"
           leftIcon={<MdAddShoppingCart />}
           variant="ghost"

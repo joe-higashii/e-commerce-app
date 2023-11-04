@@ -13,6 +13,7 @@ import { GeralProvider } from "./context/GeralContext.jsx";
 import Pedidos from './pages/Pedidos/Pedidos.jsx'
 import { UserContext, UserProvider } from './context/UserContext.jsx'
 import CardCarrinho from './components/CardCarrinho/CardCarrinho.jsx';
+import Favoritos from "./pages/Favoritos/Favoritos.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,15 +34,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/carrinho/",
-    element: <Carrinho/>,
+    element: <Carrinho />,
   },
   {
     path: "/pedidos",
-    element: <Pedidos/>,
+    element: <Pedidos />,
+  },
+  {
+    path: "/favoritos",
+    element: <Favoritos />,
   },
   {
     path: "/card/:id",
-    element: <CardCarrinho/>,
+    element: <CardCarrinho />,
 
   }
 ]);
@@ -50,8 +55,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider>
       <GeralProvider>
-       <UserProvider>
-        <RouterProvider router={router} />
+        <UserProvider>
+          <RouterProvider router={router} />
         </UserProvider>
       </GeralProvider>
     </ChakraProvider>
