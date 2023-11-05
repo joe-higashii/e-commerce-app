@@ -1,14 +1,15 @@
 import { useEffect, useState, useContext } from "react"
 import { api } from "../../api/api"
-import NavBar from "../../components/Navbar/Navbar"
+import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { UserContext } from "../../context/UserContext";
 import CardProduto from "../../components/CardProduto/CardProduto"
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, GridItem, Text } from '@chakra-ui/react'
+import { GeralContext } from "../../context/GeralContext";
 import {
     Accordion,
     AccordionItem,
-    AccordionButton,
+    AccordionButton,    
     AccordionPanel,
     AccordionIcon,
     Box,
@@ -20,17 +21,25 @@ import {
     Td,
     TableContainer,
   } from '@chakra-ui/react'
+import { useParams } from "react-router-dom";
 
 const Pedidos = () => {
-    const { nome, idUser } = useContext(UserContext)
-    const [pedidos, setPedidos] = useState([])
+    const { nome, idUser, user } = useContext(UserContext)
+    const {pedidos, setPedidos} = useContext(GeralContext)
+    const { id } = useParams();
+
+    // const [pedidos, setPedidos] = useState([])
     const [produtos, setProdutos] = useState([])
 
     const getPedidos = async () => {
         try {
-          const response = await api.get('/pedidos');
+          const response = await api.get(`/pedidos/`);
+          console.log(response)
           if (response.status === 200) {
-            const aux = response.data.filter((pedido) => pedido.idUser === idUser);
+            console.log('user:', user);
+            console.log('Response data:', response.data)
+            const aux = response.data.filter((pedido) => pedido.idUser === user.id);
+            console.log('Filtered pedidos:', aux)
             setPedidos(aux);
           } else {
             console.error("Erro ao obter a lista de pedidos.");
@@ -43,7 +52,7 @@ const Pedidos = () => {
     const getProdutos = async () => {
         const response = await api.get('/produtos')
         setProdutos(response.data)
-        console.log(produtos)
+        //console.log(produtos)
     }
 
     useEffect(() => {
@@ -52,12 +61,13 @@ const Pedidos = () => {
     }, [])
 
     return (
-        <div style={{ height:'100vh' }}>
+        <div style={{ minheight:'100vh' }}>
         <NavBar />
         <Grid
             templateRows={`repeat(${pedidos.length}, 1fr)`}
             gap={4}
             >
+            <Text mt={'1.4rem'} justifySelf={"flex-start"} fontSize={'2rem'} ><strong>{`${user.nome}`}</strong></Text>
             {pedidos.map(({ id, valorTotal, idUser, itens }) => (
                     <div key={id}>                   
                         <Accordion defaultIndex={[1]} allowMultiple>

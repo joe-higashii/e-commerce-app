@@ -81,10 +81,6 @@ export const NavBar = () => {
     navigate("/home");
   }
 
-  const handleCarrinhoClick = () => {
-    navigate("/carrinho");
-  };
-
   return (
     <>
       <Flex
