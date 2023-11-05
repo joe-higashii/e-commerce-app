@@ -30,7 +30,7 @@ const Favoritos = () => {
         gap={4}
         p={4}
       >
-        {produtos.filter(produto => produto.favoritos == true).map(({ nome, imagem, resumo, preco, id, categoria }) => (
+        {produtos.filter(produto => produto.favoritos == true).map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
           <CardProduto
             nome={nome}
             imagem={imagem}
@@ -38,6 +38,7 @@ const Favoritos = () => {
             preco={preco}
             id={id}
             categoria={categoria}
+            favorito={favoritos}
           />
         ))}
       </Grid>

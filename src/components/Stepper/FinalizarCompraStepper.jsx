@@ -12,7 +12,7 @@ const steps = [
   
   function FinalizarCompraStepper() {
     const { activeStep } = useSteps({
-      index: 1,
+      index: 0,
       count: steps.length,
     })
   

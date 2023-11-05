@@ -1,52 +1,27 @@
-import React, { useState } from "react";
-import { Button, IconButton, useToast } from "@chakra-ui/react";
-import { MdAddShoppingCart } from "react-icons/md";
-import { FaHeart } from 'react-icons/fa';
+import React from "react";
+import { useToast } from "@chakra-ui/react";
 
-function AdicionarAoCarrinhoToast(nome) {
-  const [favoritos, setFavoritos] = useState([]);
-  const [ativo, setAtivo] = useState(false);
+
+function AdicionarAoCarrinhoToast() {
   const toast = useToast();
+  const examplePromise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve(100), 1500);
+  });
 
-  return (
-    <IconButton
-      onClick={() => {
-        const item = { nome };
-
-        const examplePromise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(100), 1500);
-          });
-    
-          toast.promise(examplePromise, {
-            success: {
-              title: "Promise resolvida",
-              description: `Produto adicionado com sucesso!`,
-            },
-            error: {
-              title: "Promise rejeitada",
-              description: "Produto fora de estoque",
-            },
-            loading: {
-              title: "Promise pendente",
-              description: "Adicionando ao Carrinho",
-            },
-          });
-    
-        if (ativo) {
-          const novosFavoritos = favoritos.filter((favorito) => favorito.nome !== item.nome);
-          setFavoritos(novosFavoritos);
-        } else {
-          setFavoritos([...favoritos, item]);
-        }
-
-        setAtivo(!ativo);
-      }}
-      ml={5}
-      icon={<FaHeart color={ativo ? "red" : "gray"} />}
-      variant="outline"
-      colorScheme="red"
-    />
-  );
+  toast.promise(examplePromise, {
+    success: {
+      title: "Promise resolvida",
+      description: `Produto adicionado com sucesso!`,
+    },
+    error: {
+      title: "Promise rejeitada",
+      description: "Produto fora de estoque",
+    },
+    loading: {
+      title: "Promise pendente",
+      description: "Adicionando ao Carrinho",
+    },
+  });
 }
 
 export default AdicionarAoCarrinhoToast;

@@ -11,10 +11,13 @@ import {
   ButtonGroup,
   Button,
   IconButton,
+  Flex,
+  useToast 
 } from "@chakra-ui/react";
 import { MdAddShoppingCart } from "react-icons/md";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import AdicionarAosFavoritosToast from "../Toast/AdicionarAosFavoritosToast";
 import AdicionarAoCarrinhoToast from "../Toast/AdicionarAoCarrinhoToast";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { UserContext } from "../../context/UserContext";
@@ -22,10 +25,9 @@ import { useContext } from "react";
 
 const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
   const [isFavorito, setIsFavorito] = useState(favorito);
-  const produto = { nome, imagem, resumo, preco, id };
+  const produto = { nome, imagem, resumo, preco, id, favorito };
   const navigate = useNavigate();
-  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
-    useContext(UserContext);
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho } = useContext(UserContext);
 
   const favoritar = () => {
     setIsFavorito(!isFavorito);
@@ -37,17 +39,21 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
   };
 
   return (
-    <Card w="300px" h="450px">
+    <Card w="300px" h="500px">
       <CardBody>
-        <Image
-          src={imagem}
-          alt="Green double couch with wooden legs"
-          borderRadius="lg"
-          boxSize="150px"
-        />
-        {/* {isFavorito ? <AiFillHeart color="#b90000" size={25} onClick={favoritar} /> : <AiOutlineHeart size={25} onClick={favoritar} />}         */}
+        <Flex justifyContent={'center'}>
+          <Image
+            src={imagem}
+            alt="Green double couch with wooden legs"
+            borderRadius="lg"
+            boxSize="150px"
+          />
+        </Flex>
         <Stack mt="6" spacing="3">
-          <Heading size="md">{nome}</Heading>
+          <Flex justifyContent={'space-around'} alignItems={'center'} gap={'1rem'}>
+            <Heading size="md">{nome}</Heading>
+            <AdicionarAosFavoritosToast produtoId={produto.id} favorito={produto.favorito} produto={produto} />
+          </Flex>
           <Text textAlign="left">{resumo}</Text>
           <Text as="b" fontSize="2xl">
             R${preco}
@@ -56,7 +62,7 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
       </CardBody>
       <Divider />
       <CardFooter>
-        <ButtonGroup spacing="2">
+        <ButtonGroup spacing="2" justifyContent={'space-evenly'}>
           <Button
             variant="solid"
             colorScheme="purple"
@@ -72,7 +78,6 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
           >
             Detalhes
           </Button>
-          <AdicionarAoCarrinhoToast />
           <IconButton
             ml={5}
             icon={<MdAddShoppingCart />}

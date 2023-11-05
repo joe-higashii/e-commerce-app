@@ -2,13 +2,15 @@ import {
   Button,
   Flex,
   Heading,
+  IconButton,
   Link,
   Stack,
   Text,
   useColorModeValue as mode,
+  useToast
 } from "@chakra-ui/react";
 import { useContext } from "react";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { UserContext } from "../../context/UserContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +31,7 @@ export const FormCarrinhoSumario = () => {
   const { carrinhoUsuario, user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  const toast = useToast()   // CONFIGURAR TOAST PARA ESVAZIAR CARRINHO
   const handleEsvaziarCarrinho = async () => {
     setUser((prevUser) => ({
       ...prevUser,
@@ -43,6 +46,14 @@ export const FormCarrinhoSumario = () => {
     } catch (error) {
       console.error("Erro ao esvaziar carrinho no servidor", error);
     }
+    //GERAR TOAST AVISANDO QUE O CARRINHO FOI ESVAZIADO
+    toast({
+      title: 'Carrinho Esvaziado',
+      description: "Todos os produtos foram removidos.",
+      status: 'error',
+      duration: 5000,
+      isClosable: true,
+    })
   };
 
   const finalizarCompra = async () => {
@@ -61,11 +72,11 @@ export const FormCarrinhoSumario = () => {
           try {
             const produtoNoBancoDeDados = await api.get(`/produtos/${produto.id}`);
             const quantidadeAtualizada = produtoNoBancoDeDados.data.quantidade - produto.quantidade;
-            
+
             await api.patch(`/produtos/${produto.id}`, {
               quantidade: quantidadeAtualizada,
             });
-            
+
             console.log(`Quantidade do produto ${produto.id} atualizada para ${quantidadeAtualizada}`);
           } catch (error) {
             console.error(`Erro ao atualizar quantidade do produto ${produto.id}:`, error);
@@ -125,12 +136,12 @@ export const FormCarrinhoSumario = () => {
             Total
           </Text>
           <Text fontSize="xl" fontWeight="extrabold">
-          {`R$ ${valorTotalDoCarrinho.toFixed(2)}`}
+            {`R$ ${valorTotalDoCarrinho.toFixed(2)}`}
           </Text>
         </Flex>
       </Stack>
       <Button
-        colorScheme="blue"
+        colorScheme="purple"
         size="lg"
         fontSize="md"
         rightIcon={<FaArrowRight />}
@@ -140,7 +151,7 @@ export const FormCarrinhoSumario = () => {
       </Button>
       <Button
         variant={"outline"}
-        colorScheme="blue"
+        colorScheme="purple"
         size="lg"
         fontSize="md"
         leftIcon={<FaArrowLeft />}
@@ -148,14 +159,19 @@ export const FormCarrinhoSumario = () => {
       >
         CONTINUAR COMPRANDO
       </Button>
-      <Button
-        colorScheme="red"
-        size="lg"
-        fontSize="md"
-        onClick={handleEsvaziarCarrinho}
-      >
-        ESVAZIAR CARRINHO
-      </Button>
+      <Flex justifyContent={'right'}>
+        <IconButton
+          colorScheme="red"
+          aria-label='Esvaziar Lixeira'
+          size="lg"
+          fontSize="md"
+          variant={'ghost'}
+          onClick={handleEsvaziarCarrinho}
+          icon={<FaTrashAlt />}
+          width="2rem"
+        >
+        </IconButton></Flex>
+
     </Stack>
   );
 };
