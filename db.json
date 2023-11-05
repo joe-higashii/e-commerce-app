@@ -13,7 +13,7 @@
       "id": 1,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 37,
+      "quantidade": 33,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": true,
@@ -24,7 +24,7 @@
       "id": 2,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 37,
+      "quantidade": 30,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
@@ -34,7 +34,7 @@
       "id": 3,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 37,
+      "quantidade": 27,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
@@ -141,6 +141,25 @@
           "quantidade": 10
         }
       ]
+    },
+    {
+      "valorTotal": 629.79,
+      "idUser": 1,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 4
+        },
+        {
+          "idProduto": 2,
+          "quantidade": 7
+        },
+        {
+          "idProduto": 3,
+          "quantidade": 10
+        }
+      ],
+      "id": 3
     }
   ]
 }

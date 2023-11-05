@@ -155,7 +155,6 @@ export const NavBar = () => {
           leftIcon={<MdAddShoppingCart />}
           variant="ghost"
           w="16rem"
-          onClick={handleCarrinhoClick}
         >
           Carrinho
         </Button>

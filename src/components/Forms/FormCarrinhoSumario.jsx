@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from "../../context/UserContext";
 import { api } from "../../api/api";
 
 const OrderSummaryItem = (props) => {
@@ -26,7 +26,7 @@ const OrderSummaryItem = (props) => {
 
 export const FormCarrinhoSumario = () => {
   const { carrinhoUsuario, user, setUser } = useContext(UserContext);
-  
+
   const handleEsvaziarCarrinho = async () => {
     setUser((prevUser) => ({
       ...prevUser,
@@ -41,6 +41,58 @@ export const FormCarrinhoSumario = () => {
     } catch (error) {
       console.error("Erro ao esvaziar carrinho no servidor", error);
     }
+  };
+
+  const finalizarCompra = async () => {
+    try {
+      const novoPedido = {
+        valorTotal: calcularValorTotal(carrinhoUsuario),
+        idUser: user.id,
+        itens: carrinhoUsuario.map((produto) => ({
+          idProduto: produto.id,
+          quantidade: produto.quantidade,
+        })),
+      };
+
+      await Promise.all(
+        carrinhoUsuario.map(async (produto) => {
+          try {
+            const produtoNoBancoDeDados = await api.get(`/produtos/${produto.id}`);
+            const quantidadeAtualizada = produtoNoBancoDeDados.data.quantidade - produto.quantidade;
+            
+            await api.patch(`/produtos/${produto.id}`, {
+              quantidade: quantidadeAtualizada,
+            });
+            
+            console.log(`Quantidade do produto ${produto.id} atualizada para ${quantidadeAtualizada}`);
+          } catch (error) {
+            console.error(`Erro ao atualizar quantidade do produto ${produto.id}:`, error);
+          }
+        })
+      );
+
+      const response = await api.post("/pedidos", novoPedido);
+      console.log("Pedido finalizado com sucesso:", response.data);
+
+      setUser((prevUser) => ({
+        ...prevUser,
+        carrinhoUsuario: [],
+      }));
+
+      await api.patch(`/users/${user.id}`, {
+        carrinhoUsuario: [],
+      });
+
+      console.log("Carrinho esvaziado no servidor");
+    } catch (error) {
+      console.error("Erro ao finalizar compra:", error);
+    }
+  };
+
+  const calcularValorTotal = (produtos) => {
+    return produtos.reduce((total, produto) => {
+      return total + produto.preco * produto.quantidade;
+    }, 0);
   };
 
   return (
@@ -73,6 +125,7 @@ export const FormCarrinhoSumario = () => {
         size="lg"
         fontSize="md"
         rightIcon={<FaArrowRight />}
+        onClick={finalizarCompra}
       >
         FINALIZAR COMPRA
       </Button>
