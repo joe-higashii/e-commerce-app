@@ -7,7 +7,8 @@ import {
   Stack,
   Text,
   useColorModeValue as mode,
-  useToast
+  useToast,
+  Tooltip,
 } from "@chakra-ui/react";
 import { useContext } from "react";
 import { FaArrowRight, FaArrowLeft, FaTrash, FaTrashAlt } from "react-icons/fa";
@@ -31,7 +32,7 @@ export const FormCarrinhoSumario = () => {
   const { carrinhoUsuario, user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const toast = useToast()   // CONFIGURAR TOAST PARA ESVAZIAR CARRINHO
+  const toast = useToast(); // CONFIGURAR TOAST PARA ESVAZIAR CARRINHO
   const handleEsvaziarCarrinho = async () => {
     setUser((prevUser) => ({
       ...prevUser,
@@ -48,12 +49,12 @@ export const FormCarrinhoSumario = () => {
     }
     //GERAR TOAST AVISANDO QUE O CARRINHO FOI ESVAZIADO
     toast({
-      title: 'Carrinho Esvaziado',
+      title: "Carrinho Esvaziado",
       description: "Todos os produtos foram removidos.",
-      status: 'error',
+      status: "error",
       duration: 5000,
       isClosable: true,
-    })
+    });
   };
 
   const finalizarCompra = async () => {
@@ -70,16 +71,24 @@ export const FormCarrinhoSumario = () => {
       await Promise.all(
         carrinhoUsuario.map(async (produto) => {
           try {
-            const produtoNoBancoDeDados = await api.get(`/produtos/${produto.id}`);
-            const quantidadeAtualizada = produtoNoBancoDeDados.data.quantidade - produto.quantidade;
+            const produtoNoBancoDeDados = await api.get(
+              `/produtos/${produto.id}`
+            );
+            const quantidadeAtualizada =
+              produtoNoBancoDeDados.data.quantidade - produto.quantidade;
 
             await api.patch(`/produtos/${produto.id}`, {
               quantidade: quantidadeAtualizada,
             });
 
-            console.log(`Quantidade do produto ${produto.id} atualizada para ${quantidadeAtualizada}`);
+            console.log(
+              `Quantidade do produto ${produto.id} atualizada para ${quantidadeAtualizada}`
+            );
           } catch (error) {
-            console.error(`Erro ao atualizar quantidade do produto ${produto.id}:`, error);
+            console.error(
+              `Erro ao atualizar quantidade do produto ${produto.id}:`,
+              error
+            );
           }
         })
       );
@@ -100,7 +109,7 @@ export const FormCarrinhoSumario = () => {
     } catch (error) {
       console.error("Erro ao finalizar compra:", error);
     }
-    navigate('/pedidos')
+    navigate("/pedidos");
   };
 
   const calcularValorTotal = (produtos) => {
@@ -112,15 +121,18 @@ export const FormCarrinhoSumario = () => {
   const valorTotalDoCarrinho = calcularValorTotal(carrinhoUsuario);
 
   const handleContinuarComprando = () => {
-    navigate('/lista/produtos')
-  }
+    navigate("/lista/produtos");
+  };
 
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
       <Heading size="md">Sumário do Pedido</Heading>
 
       <Stack spacing="6">
-        <OrderSummaryItem label="Subtotal" value={`R$ ${valorTotalDoCarrinho.toFixed(2)}`} />
+        <OrderSummaryItem
+          label="Subtotal"
+          value={`R$ ${valorTotalDoCarrinho.toFixed(2)}`}
+        />
         <OrderSummaryItem label="Frete">
           <Link href="#" textDecor="underline">
             Calcular Frete
@@ -159,19 +171,20 @@ export const FormCarrinhoSumario = () => {
       >
         CONTINUAR COMPRANDO
       </Button>
-      <Flex justifyContent={'right'}>
-        <IconButton
-          colorScheme="red"
-          aria-label='Esvaziar Lixeira'
-          size="lg"
-          fontSize="md"
-          variant={'ghost'}
-          onClick={handleEsvaziarCarrinho}
-          icon={<FaTrashAlt />}
-          width="2rem"
-        >
-        </IconButton></Flex>
-
+      <Flex justifyContent={"right"}>
+        <Tooltip hasArrow label="Esvaziar Carrinho" bg="red.600">
+          <IconButton
+            colorScheme="red"
+            aria-label="Esvaziar Lixeira"
+            size="lg"
+            fontSize="md"
+            variant={"ghost"}
+            onClick={handleEsvaziarCarrinho}
+            icon={<FaTrashAlt />}
+            width="2rem"
+          ></IconButton>
+        </Tooltip>
+      </Flex>
     </Stack>
   );
 };
