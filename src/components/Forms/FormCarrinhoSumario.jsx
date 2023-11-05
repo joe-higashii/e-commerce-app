@@ -95,6 +95,8 @@ export const FormCarrinhoSumario = () => {
     }, 0);
   };
 
+  const valorTotalDoCarrinho = calcularValorTotal(carrinhoUsuario);
+
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
       <Heading size="md">Sumário do Pedido</Heading>
@@ -116,7 +118,7 @@ export const FormCarrinhoSumario = () => {
             Total
           </Text>
           <Text fontSize="xl" fontWeight="extrabold">
-            {"R$597"}
+          {`R$ ${valorTotalDoCarrinho}`}
           </Text>
         </Flex>
       </Stack>
