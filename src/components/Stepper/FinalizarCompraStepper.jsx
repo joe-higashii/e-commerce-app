@@ -10,9 +10,9 @@ const steps = [
     { title: 'Quinto', description: 'Concluir'},
   ]
   
-  function FinalizarCompraStepper() {
+  function FinalizarCompraStepper(indexAtual) {
     const { activeStep } = useSteps({
-      index: 0,
+      index: indexAtual,
       count: steps.length,
     })
   

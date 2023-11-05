@@ -30,7 +30,7 @@ const Favoritos = () => {
         gap={4}
         p={4}
       >
-        {produtos.filter(produto => produto.favoritos == true).map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
+        {produtos.filter(produto => produto.favoritos == true && produto.quantidade >= 1).map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
           <CardProduto
             nome={nome}
             imagem={imagem}

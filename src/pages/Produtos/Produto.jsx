@@ -18,6 +18,7 @@ import {
 import NavBar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import AccordionDesc from "../../components/Accordion/AccordionDesc";
+import AccordionComentario from "../../components/Accordion/AccordionComentario.jsx";
 import { MdAddShoppingCart } from "react-icons/md";
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
@@ -109,6 +110,7 @@ const Produto = () => {
 
       <br />
       <AccordionDesc descricao={produto.descricao} />
+      <AccordionComentario />
       <Footer />
     </>
   );

@@ -59,15 +59,14 @@ const Pedidos = () => {
   return (
     <div style={{ minHeight: "100vh" }}>
       <NavBar />
-      <Grid templateRows={`repeat(${pedidos.length}, 1fr)`} gap={4}>
-        <Text mt={"1.4rem"} justifySelf={"flex-start"} fontSize={"2rem"}>
+      <Text mb={'1rem'} mt={'1.5rem'} align={"start"} fontSize={"2rem"}>
           <strong>{`${user.nome}`}</strong>
         </Text>
+      <Grid templateRows={`repeat(${pedidos.length}, 1fr)`} gap={4}>
         {pedidos.map(({ id, valorTotal, itens }, index) => (
           <div key={id}>
             <Accordion
               allowToggle
-              isLazy
               onChange={() => handleAccordionClick(index)}
             >
               <AccordionItem
@@ -113,7 +112,6 @@ const Pedidos = () => {
                                 <img
                                   src={produto.imgurl}
                                   alt="Produto"
-                                  borderRadius="sm"
                                   width={"80px"}
                                 />
                               </GridItem>
@@ -165,7 +163,6 @@ const Pedidos = () => {
                                           <img
                                             src={produto.imagem}
                                             alt="Produto"
-                                            borderRadius="sm"
                                             width={"80px"}
                                           />
                                         </GridItem>

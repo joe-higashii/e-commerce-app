@@ -116,19 +116,19 @@ export const FormCarrinhoSumario = () => {
   }
 
   return (
-    <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
+    <Stack spacing="8" borderWidth="1px" borderRadius={"12px"} padding="8" width="full" border={"1px solid #D9D9D9"}>
       <Heading size="md">Sumário do Pedido</Heading>
 
       <Stack spacing="6">
         <OrderSummaryItem label="Subtotal" value={`R$ ${valorTotalDoCarrinho.toFixed(2)}`} />
         <OrderSummaryItem label="Frete">
           <Link href="#" textDecor="underline">
-            Calcular Frete
+            Grátis!
           </Link>
         </OrderSummaryItem>
         <OrderSummaryItem label="Cupom de Desconto">
           <Link href="#" textDecor="underline">
-            Adicionar Cupom
+            Não Tem...
           </Link>
         </OrderSummaryItem>
         <Flex justify="space-between">
