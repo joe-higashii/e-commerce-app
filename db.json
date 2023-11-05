@@ -118,11 +118,11 @@
       "idUser": 1,
       "itens": [
         {
-          "idProduto": 2,
+          "id": 2,
           "quantidade": 10
         },
         {
-          "idProduto": 1,
+          "id": 1,
           "quantidade": 10
         }
       ]
@@ -133,33 +133,33 @@
       "idUser": 1,
       "itens": [
         {
-          "idProduto": 2,
+          "id": 2,
           "quantidade": 10
         },
         {
-          "idProduto": 1,
+          "id": 1,
           "quantidade": 10
         }
       ]
     },
     {
+      "id": 3,
       "valorTotal": 629.79,
       "idUser": 1,
       "itens": [
         {
-          "idProduto": 1,
+          "id": 1,
           "quantidade": 4
         },
         {
-          "idProduto": 2,
+          "id": 2,
           "quantidade": 7
         },
         {
-          "idProduto": 3,
+          "id": 3,
           "quantidade": 10
         }
-      ],
-      "id": 3
+      ]
     }
   ]
 }

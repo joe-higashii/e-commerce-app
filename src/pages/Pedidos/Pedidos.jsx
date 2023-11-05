@@ -27,14 +27,18 @@ const Pedidos = () => {
     const [produtos, setProdutos] = useState([])
 
     const getPedidos = async () => {
-        const response = await api.get('/pedidos')
-        const aux = (response.data.filter((pedido) => 
-            pedido.idUser === idUser
-        ))
-        console.log(aux)
-        setPedidos(aux)
-        console.log(pedidos)
-    }
+        try {
+          const response = await api.get('/pedidos');
+          if (response.status === 200) {
+            const aux = response.data.filter((pedido) => pedido.idUser === idUser);
+            setPedidos(aux);
+          } else {
+            console.error("Erro ao obter a lista de pedidos.");
+          }
+        } catch (error) {
+          console.error("Erro ao obter a lista de pedidos:", error);
+        }
+    };      
 
     const getProdutos = async () => {
         const response = await api.get('/produtos')
@@ -51,7 +55,7 @@ const Pedidos = () => {
         <div style={{ height:'100vh' }}>
         <NavBar />
         <Grid
-            templateRows='repeat()'
+            templateRows={`repeat(${pedidos.length}, 1fr)`}
             gap={4}
             >
             {pedidos.map(({ id, valorTotal, idUser, itens }) => (
