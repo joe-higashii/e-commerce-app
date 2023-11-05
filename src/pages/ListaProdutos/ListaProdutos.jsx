@@ -30,7 +30,7 @@ const ListaProdutos = () => {
         gap={4}
         p={4}
       >
-        {produtos.map(({ nome, imagem, resumo, preco, id, categoria }) => (
+        {produtos.map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
           <CardProduto
             nome={nome}
             imagem={imagem}
@@ -38,6 +38,7 @@ const ListaProdutos = () => {
             preco={preco}
             id={id}
             categoria={categoria}
+            favorito={favoritos}
           />
         ))}
       </Grid>

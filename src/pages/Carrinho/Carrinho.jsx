@@ -42,7 +42,6 @@ function Carrinho() {
     <>
       <NavBar />
       <br />
-      <CadastroModal></CadastroModal>
       <FinalizarCompraStepper />
       <Tabs>
         <TabList display={"none"}>
