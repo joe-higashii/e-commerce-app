@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../api/api";
 import {
   Box,
@@ -25,12 +25,18 @@ import { UserContext } from "../../context/UserContext.jsx";
 const Produto = () => {
   const [produto, setProduto] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
   const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
     useContext(UserContext);
 
   const handleAdicionarAoCarrinho = () => {
     adicionarProdutoAoCarrinho(produto);
     console.log(handleAdicionarAoCarrinho);
+  };
+
+  const handleComprarProduto = () => {
+    adicionarProdutoAoCarrinho(produto);
+    navigate("/carrinho");
   };
 
   const getProduto = async () => {
@@ -86,6 +92,7 @@ const Produto = () => {
               w="200px"
               variant="solid"
               colorScheme="purple"
+              onClick={handleComprarProduto}
             >
               COMPRAR
             </Button>

@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { UserContext } from "../../context/UserContext";
 import { api } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 const OrderSummaryItem = (props) => {
   const { label, value, children } = props;
@@ -26,6 +27,7 @@ const OrderSummaryItem = (props) => {
 
 export const FormCarrinhoSumario = () => {
   const { carrinhoUsuario, user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleEsvaziarCarrinho = async () => {
     setUser((prevUser) => ({
@@ -87,6 +89,7 @@ export const FormCarrinhoSumario = () => {
     } catch (error) {
       console.error("Erro ao finalizar compra:", error);
     }
+    navigate('/pedidos')
   };
 
   const calcularValorTotal = (produtos) => {
@@ -97,12 +100,16 @@ export const FormCarrinhoSumario = () => {
 
   const valorTotalDoCarrinho = calcularValorTotal(carrinhoUsuario);
 
+  const handleContinuarComprando = () => {
+    navigate('/lista/produtos')
+  }
+
   return (
     <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
       <Heading size="md">Sumário do Pedido</Heading>
 
       <Stack spacing="6">
-        <OrderSummaryItem label="Subtotal" value={"R$597"} />
+        <OrderSummaryItem label="Subtotal" value={`R$ ${valorTotalDoCarrinho.toFixed(2)}`} />
         <OrderSummaryItem label="Frete">
           <Link href="#" textDecor="underline">
             Calcular Frete
@@ -118,7 +125,7 @@ export const FormCarrinhoSumario = () => {
             Total
           </Text>
           <Text fontSize="xl" fontWeight="extrabold">
-          {`R$ ${valorTotalDoCarrinho}`}
+          {`R$ ${valorTotalDoCarrinho.toFixed(2)}`}
           </Text>
         </Flex>
       </Stack>
@@ -137,6 +144,7 @@ export const FormCarrinhoSumario = () => {
         size="lg"
         fontSize="md"
         leftIcon={<FaArrowLeft />}
+        onClick={handleContinuarComprando}
       >
         CONTINUAR COMPRANDO
       </Button>
