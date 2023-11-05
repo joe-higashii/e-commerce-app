@@ -30,12 +30,12 @@ const ListaProdutos = () => {
         gap={4}
         p={4}
       >
-        {produtos.map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
+        {produtos.filter(produto => produto.quantidade >= 1).map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
           <CardProduto
             nome={nome}
             imagem={imagem}
             resumo={resumo}
-            preco={preco}
+            preco={preco} 
             id={id}
             categoria={categoria}
             favorito={favoritos}

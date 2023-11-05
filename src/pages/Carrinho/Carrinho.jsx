@@ -42,7 +42,7 @@ function Carrinho() {
     <>
       <NavBar />
       <br />
-      <FinalizarCompraStepper />
+      <FinalizarCompraStepper indexAtual={0} />
       <Tabs>
         <TabList display={"none"}>
           <Tab>One</Tab>
@@ -94,13 +94,13 @@ function Carrinho() {
               <GridItem
                 rowSpan={5}
                 colSpan={2}
-                border={"1px solid #D9D9D9"}
                 borderRadius={"12px"}
               >
                 <FormCarrinhoSumario></FormCarrinhoSumario>
               </GridItem>
               {/* Frete */}
               <GridItem
+                maxH={'6rem'}
                 colSpan={3}
                 border={"1px solid #D9D9D9"}
                 padding={"1rem"}
