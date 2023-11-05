@@ -65,7 +65,11 @@ const Pedidos = () => {
         </Text>
         {pedidos.map(({ id, valorTotal, itens }, index) => (
           <div key={id}>
-            <Accordion allowToggle isLazy onChange={() => handleAccordionClick(index)}>
+            <Accordion
+              allowToggle
+              isLazy
+              onChange={() => handleAccordionClick(index)}
+            >
               <AccordionItem
                 isDisabled={false}
                 style={{
@@ -75,7 +79,9 @@ const Pedidos = () => {
               >
                 {({ isExpanded }) => (
                   <>
-                    <AccordionButton style={{ height: "60px", display: "flex" }}>
+                    <AccordionButton
+                      style={{ height: "60px", display: "flex" }}
+                    >
                       <Box as="span" flex="1" textAlign="left">
                         Pedido Nº {id}
                       </Box>
@@ -89,7 +95,9 @@ const Pedidos = () => {
                     </AccordionButton>
                     <AccordionPanel pb={4}>
                       {itens.map(({ idProduto, quantidade }) => {
-                        const produto = produtos.find((produto) => produto.id === idProduto);
+                        const produto = produtos.find(
+                          (produto) => produto.id === idProduto
+                        );
 
                         if (produto) {
                           return (
@@ -102,7 +110,12 @@ const Pedidos = () => {
                               gap={3}
                             >
                               <GridItem rowSpan={2} colSpan={1}>
-                                <img src={produto.imgurl} alt="Produto" borderRadius="sm" width={"80px"} />
+                                <img
+                                  src={produto.imgurl}
+                                  alt="Produto"
+                                  borderRadius="sm"
+                                  width={"80px"}
+                                />
                               </GridItem>
                               <GridItem colSpan={4} textAlign="left">
                                 <h2>{produto.nome}</h2>
@@ -125,6 +138,49 @@ const Pedidos = () => {
                             <Tr>
                               <Td>DESCONTO</Td>
                               <Td textAlign={"right"}>R$ 0</Td>
+                            </Tr>
+                            <Tr>
+                              <Td>USUARIO</Td>
+                              <Td textAlign={"right"}>{user.nome}</Td>
+                            </Tr>
+                            <Tr>
+                              <Td>ITENS</Td>
+                              <Td textAlign={"right"}>
+                                {itens.map(({ id, pedido }) => {
+                                  const produto = produtos.find(
+                                    (produto) => produto.id === id
+                                  );
+
+                                  if (produto) {
+                                    return (
+                                      <Grid
+                                        key={produto.id}
+                                        h="150px"
+                                        templateRows="repeat(2, 1fr)"
+                                        templateColumns="repeat(5, 1fr)"
+                                        marginBottom="10px"
+                                        gap={3}
+                                      >
+                                        <GridItem rowSpan={2} colSpan={1}>
+                                          <img
+                                            src={produto.imagem}
+                                            alt="Produto"
+                                            borderRadius="sm"
+                                            width={"80px"}
+                                          />
+                                        </GridItem>
+                                        <GridItem colSpan={4} textAlign="left">
+                                          <h2>{produto.nome}</h2>
+                                        </GridItem>
+                                        <GridItem colSpan={4} textAlign="right">
+                                          <h2>R$ {produto.preco}</h2>
+                                        </GridItem>
+                                      </Grid>
+                                    );
+                                  }
+                                  return null;
+                                })}
+                              </Td>
                             </Tr>
                           </Tbody>
                         </Table>
