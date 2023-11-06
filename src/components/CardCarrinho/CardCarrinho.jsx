@@ -17,6 +17,7 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, id }) => {
           alt={nome}
           borderRadius='lg'
           boxSize='150px'
+          fit="contain"
         />
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nome}</Heading>

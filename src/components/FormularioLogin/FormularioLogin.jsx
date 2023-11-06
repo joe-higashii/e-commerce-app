@@ -37,7 +37,7 @@ export default function FormularioLogin() {
       if (user) {
         setNome(user.nome);
         setIdUser(user.id);
-        navigate("/home");
+        navigate("/");
       }
     }
 

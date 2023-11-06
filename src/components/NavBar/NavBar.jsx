@@ -84,11 +84,11 @@ export const NavBar = () => {
   };
 
   const navigateHome = () => {
-    navigate("/home");
+    navigate("/");
   };
 
   const navigateLogin = () => {
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -150,7 +150,7 @@ export const NavBar = () => {
               borderRightRadius={3.3}
               border="1px solid #949494"
             >
-              Search
+              Buscar
             </Button>
           </InputRightAddon>
         </InputGroup>
