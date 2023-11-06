@@ -33,8 +33,29 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
     });
   }
 
+  const handleAtualizarQuantidade = async (novaQuantidade) => {
+    const produtoIndex = carrinhoUsuario.findIndex((produto) => produto.id === id);
+    if (produtoIndex !== -1) {
+      const novoCarrinho = [...carrinhoUsuario];
+      novoCarrinho[produtoIndex].quantidade = qtd;
+      setUser((prevUser) => ({
+        ...prevUser,
+        carrinhoUsuario: novoCarrinho,
+      }));
+      await api.patch(`/users/${user.id}`, {
+        carrinhoUsuario: novoCarrinho,
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleAtualizarQuantidade(qtd);
+  }, [qtd]);
+
+ const subTotal = preco*qtd
+
   return (
-    <Card style={{ marginBottom: "10px", maxWidth: '100%', display: 'flex', alignItems: 'center', height: '80px' }}>
+    <Card justifyContent={'center'} style={{ marginBottom: "10px", maxWidth: '100%', display: 'flex', alignItems: 'center', height: '80px' }}>
     <Grid
       templateColumns={['1fr', '1fr', '1fr 2fr 3fr 1fr auto']}
       gap={4}
@@ -63,7 +84,7 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
   
       <GridItem>
         <Text as="b" fontSize="sm">
-          R${preco*qtd}
+          R${subTotal.toFixed(2)}
         </Text>
       </GridItem>
   
