@@ -67,7 +67,7 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
   
       <GridItem>
         <IconButton
-          colorScheme="grey"
+          colorScheme="red"
           aria-label="Retirar Produto"
           size="lg"
           fontSize="md"
