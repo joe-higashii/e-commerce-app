@@ -39,21 +39,21 @@ export const NavBar = () => {
   const handlePesquisarInput = async (e) => {
     // Wait for the value of the input element to be updated before calling the filter function.
     await new Promise((resolve) => setTimeout(resolve, 0));
-    
+
     const produto = inputRef.current.value;
-    console.log(produto)
+    console.log(produto);
     const response = await api.get("/produtos", {
-    params: { produto: produto },
+      params: { produto: produto },
     });
     const filteredProducts = response.data.filter((product) => {
-    console.log(product.nome)
-    return product.nome.toLowerCase().includes(produto.toLowerCase());
+      console.log(product.nome);
+      return product.nome.toLowerCase().includes(produto.toLowerCase());
     });
     setProdutos(filteredProducts);
     console.log(filteredProducts);
     navigate("/lista/produtos");
-    };
-  
+  };
+
   //FAZER A PESQUISA CLICANDO NO BUTTON
   const handlePesquisaChange = async (e) => {
     const produto = e.target.value;
@@ -72,18 +72,25 @@ export const NavBar = () => {
 
   const navigateFavoritos = () => {
     navigate("/favoritos");
-  }
+  };
 
   const navigateCarrinho = () => {
     navigate("/carrinho");
-  }
+  };
 
   const navigateHome = () => {
     navigate("/home");
-  }
+  };
+
+  const navigateLogin = () => {
+    navigate("/");
+  };
 
   return (
     <>
+      <Button mt={4} mr={1} onClick={navigateLogin}>
+        Login
+      </Button>
       <CadastroModal />
       <Flex
         display={{ base: "block", xl: "flex" }}
@@ -96,8 +103,10 @@ export const NavBar = () => {
         gap={"1rem"}
       >
         {/* <FaGitkraken /> */}
-        <Text onClick={navigateHome} mr={'2rem'} fontSize={'2rem'} mb={'.5rem'} >
-          <a href=""><strong> KRAKEN</strong></a>
+        <Text onClick={navigateHome} mr={"2rem"} fontSize={"2rem"} mb={".5rem"}>
+          <a href="">
+            <strong> KRAKEN</strong>
+          </a>
         </Text>
         <Button onClick={getProdutos} variant="ghost" w="sm">
           Todos os Produtos
@@ -127,7 +136,8 @@ export const NavBar = () => {
             border="1px solid #949494"
           />
           <InputRightAddon p={0} border="none">
-            <Button onClick={handlePesquisaChange}
+            <Button
+              onClick={handlePesquisaChange}
               size="sm"
               borderLeftRadius={0}
               borderRightRadius={3.3}
