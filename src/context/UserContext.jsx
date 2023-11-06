@@ -7,11 +7,7 @@ export const UserProvider = ({ children }) => {
     const [nome, setNome] = useState('');
     const [idUser, setIdUser] = useState('');
     const [carrinhoUsuario, setCarrinhoUsuario] = useState([]);
-    const [user, setUser] = useState({
-        id: 1,
-        nome: 'Raphael da Rocha Pinto Barboza',
-        carrinhoUsuario: [],
-    });
+    const [user, setUser] = useState({});
 
     const getProdutosDoCarrinho = async () => {
         try {
@@ -22,7 +18,6 @@ export const UserProvider = ({ children }) => {
             console.error("Erro ao carregar produtos do carrinho do usuário", error);
         }
     };
-
     
     const adicionarProdutoAoCarrinho = async (produto) => {
         

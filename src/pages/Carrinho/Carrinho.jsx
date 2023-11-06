@@ -20,6 +20,7 @@ import Footer from "../../components/Footer/Footer";
 import { UserContext } from "../../context/UserContext.jsx";
 import CardCarrinho from "../../components/CardCarrinho/CardCarrinho.jsx";
 import CadastroModal from "../../components/Modal/CadastroModal.jsx";
+import { api } from "../../api/api.js";
 
 function Carrinho() {
   const { user, carrinhoUsuario, setCarrinhoUsuario, adicionarProdutoAoCarrinho } = useContext(UserContext);
