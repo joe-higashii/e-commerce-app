@@ -15,6 +15,8 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
     setProduto(response.data);
   };
 
+  const [qtd, setqtd] = useState(quantidade)
+
   useEffect(() => {
     getProduto();
   }, []);
@@ -56,12 +58,12 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
       </GridItem>
   
       <GridItem>
-        <SeletorQuantidade quantidade={produto.quantidade}totalitens={quantidade}/>
+        <SeletorQuantidade quantidade={produto.quantidade} totalitens={qtd} setqtd={setqtd}/>
       </GridItem>
   
       <GridItem>
         <Text as="b" fontSize="sm">
-          R${preco}
+          R${preco*qtd}
         </Text>
       </GridItem>
   
