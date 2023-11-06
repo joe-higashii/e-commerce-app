@@ -61,7 +61,7 @@ export const UserProvider = ({ children }) => {
         setNome,
         idUser,
         setIdUser,
-        carrinhoUsuario,
+        carrinhoUsuario
       };
 
       useEffect(() => {

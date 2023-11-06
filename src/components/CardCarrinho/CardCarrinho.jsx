@@ -1,48 +1,84 @@
-import React, { useContext } from 'react';
-import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton} from '@chakra-ui/react';
-import { MdAddShoppingCart } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, ButtonGroup, Button, IconButton, Grid, GridItem, HStack, useNumberInput, Input } from '@chakra-ui/react';
 import { UserContext } from '../../context/UserContext';
+import SeletorQuantidade from '../SeletorQuantidade/SeletorQuantidade';
+import { FaTrashAlt } from 'react-icons/fa';
+import { api } from '../../api/api';
 
-const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, id }) => {
-  const produto = { nome, imagem, preco, id };
-  const { carrinhoUsuario, adicionarProdutoAoCarrinho } =
-  useContext(UserContext);
+
+const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
+  const prod = { nome, imagem, preco, quantidade, resumo, id };
+  const [produto, setProduto] = useState({});
+  const { carrinhoUsuario, user, setUser } = useContext(UserContext);
+  const getProduto = async () => {
+    const response = await api.get(`/produtos/${id}`);
+    setProduto(response.data);
+  };
+
+  useEffect(() => {
+    getProduto();
+  }, []);
+
+  const handleRetirarDoCarrinho = async () => {
+    const novoCarrinho = carrinhoUsuario.filter((produto) => produto.id !== id);
+
+  setUser((prevUser) => ({
+    ...prevUser,
+    carrinhoUsuario: novoCarrinho,
+  }));
+    await api.patch(`/users/${user.id}`, {
+      carrinhoUsuario: novoCarrinho,
+    });
+  }
 
   return (
-    <Card w='300px' h='450px' >
-      <CardBody>
-        <Image
-          src={imagem}
-          alt={nome}
-          borderRadius='lg'
-          boxSize='150px'
-          fit="contain"
-        />
-        <Stack mt='6' spacing='3'>
-          <Heading size='md'>{nome}</Heading>
-          <Text fontSize='xl'>Quantidade: {quantidade}</Text>
-          <Text as='b' fontSize='2xl'>
-            R${preco}
-          </Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <ButtonGroup spacing='2'>
-          <Button variant='outline' colorScheme='purple' as={Link} to={`/produto/${id}`}>
-            Detalhes
-          </Button>
-          <IconButton
-              ml={5}
-              icon={<MdAddShoppingCart />}
-              variant="outline"
-              colorScheme="purple"
-              onClick={() => adicionarProdutoAoCarrinho(produto)}
-            />
-        </ButtonGroup>
-      </CardFooter>
-    </Card>
+    <Card style={{ marginBottom: "10px", maxWidth: '100%', display: 'flex', alignItems: 'center', height: '80px' }}>
+    <Grid
+      templateColumns={['1fr', '1fr', '1fr 2fr 3fr 1fr auto']}
+      gap={4}
+      alignItems="center"
+      
+    >
+      <GridItem alignSelf="center" justifySelf="center">
+      <Image
+        objectFit="cover"
+        maxW={['100%', '100%', { base: '90%', sm: '30px' }]}
+        ml={5} 
+        src={imagem}
+        alt={nome}
+      />
+      </GridItem>
+  
+      <GridItem>
+        <Heading size="md" textAlign="left" fontSize="sm">
+          {nome}
+        </Heading>
+      </GridItem>
+  
+      <GridItem>
+        <SeletorQuantidade quantidade={produto.quantidade} />
+      </GridItem>
+  
+      <GridItem>
+        <Text as="b" fontSize="sm">
+          R${preco}
+        </Text>
+      </GridItem>
+  
+      <GridItem>
+        <IconButton
+          colorScheme="grey"
+          aria-label="Retirar Produto"
+          size="lg"
+          fontSize="md"
+          variant={"ghost"}
+          onClick={ handleRetirarDoCarrinho}
+          icon={<FaTrashAlt />}
+          width="2rem"
+        ></IconButton>
+      </GridItem>
+    </Grid>
+  </Card>
   );
 };
 
