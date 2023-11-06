@@ -53,7 +53,7 @@
           "preco": 29.99,
           "id": 1,
           "favorito": true,
-          "quantidade": 8
+          "quantidade": 32
         },
         {
           "nome": "NVIDIA GeForce RTX 3090",
@@ -62,7 +62,7 @@
           "preco": 1499.99,
           "id": 4,
           "favorito": true,
-          "quantidade": 1
+          "quantidade": 8
         },
         {
           "nome": "Intel Core i9-12900K",
@@ -71,7 +71,7 @@
           "preco": 2199.99,
           "id": 13,
           "favorito": true,
-          "quantidade": 1
+          "quantidade": 12
         },
         {
           "nome": "Mouse sem fio Logitech",
@@ -80,7 +80,7 @@
           "preco": 39.99,
           "id": 2,
           "favorito": true,
-          "quantidade": 1
+          "quantidade": 13
         }
       ],
       "id": 4
@@ -899,12 +899,12 @@
     {
       "id": 44,
       "nome": "EVGA CLC 280mm All-In-One",
-  "preço": 139.99,
-  "quantidade": 16,
-  "resumo": "Water cooler líquido de 280mm de alto desempenho",
-  "imagem": "https://images.evga.com/products/gallery/png/400-HY-CL28-V1_XL_4.png",
-  "favoritos": true,
-  "descrição": "<strong>EVGA CLC 280mm All-In-One</strong><br><br>O EVGA CLC 280mm All-In-One é um water cooler líquido de alto desempenho com radiador de 280mm. Ele fornece resfriamento eficiente para o seu processador e é fácil de instalar. Um ótimo complemento para sistemas de alto desempenho.",
+      "preço": 139.99,
+      "quantidade": 16,
+      "resumo": "Water cooler líquido de 280mm de alto desempenho",
+      "imagem": "https://images.evga.com/products/gallery/png/400-HY-CL28-V1_XL_4.png",
+      "favoritos": true,
+      "descrição": "<strong>EVGA CLC 280mm All-In-One</strong><br><br>O EVGA CLC 280mm All-In-One é um water cooler líquido de alto desempenho com radiador de 280mm. Ele fornece resfriamento eficiente para o seu processador e é fácil de instalar. Um ótimo complemento para sistemas de alto desempenho.",
       "categoria": "Cama",
       "comentarios": [
         {
