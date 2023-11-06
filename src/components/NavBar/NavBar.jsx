@@ -102,8 +102,8 @@ export const NavBar = () => {
   return (
     <>
       <Flex justifyContent={"flex-end"}>
-        {user.nome !== undefined ? 
-          <div style={{ marginRight:'20px', display:'inline-flex' }}>
+        {user && user.nome !== undefined ? (
+          <div style={{ marginRight: '20px', display: 'inline-flex' }}>
             <p style={{ position: "relative", display: "inline-block" }}>
               <span
                 style={{
@@ -121,14 +121,14 @@ export const NavBar = () => {
               ></span>
             </p>
             <Text
-            size={"sm"}
-            variant={"ghost"}
-            colorScheme="black"
-            mt={'19px'}
-            mr={5}
+              size={"sm"}
+              variant={"ghost"}
+              colorScheme="black"
+              mt={'19px'}
+              mr={5}
             >{`Olá, ${user.nome}`}</Text>
           </div>
-        : ''}
+        ) : null}
         <Button
           size={"sm"}
           variant={"ghost"}
@@ -136,6 +136,7 @@ export const NavBar = () => {
           mt={4}
           mr={1}
           onClick={navigateLogin}
+          display={user && user.nome !== undefined ? "none" : "block"}
         >
           Login
         </Button>
