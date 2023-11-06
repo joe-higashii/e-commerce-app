@@ -85,8 +85,11 @@ function Carrinho() {
                       preco={produto.preco}
                       quantidade={produto.quantidade}
                       id={produto.id}
+                      resumo={produto.resumo}
                     />
+                    
                   ))}
+                  
                 </Flex>
                 <hr />
               </GridItem>
