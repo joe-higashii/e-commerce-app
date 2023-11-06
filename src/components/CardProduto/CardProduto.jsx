@@ -27,8 +27,10 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
   const [isFavorito, setIsFavorito] = useState(favorito);
   const produto = { nome, imagem, resumo, preco, id, favorito };
   const navigate = useNavigate();
-  const { carrinhoUsuario, adicionarProdutoAoCarrinho } = useContext(UserContext);
-
+  const { carrinhoUsuario, adicionarProdutoAoCarrinho, user } = useContext(UserContext);
+  
+  const toast = useToast();
+  
   const favoritar = () => {
     setIsFavorito(!isFavorito);
   };
@@ -84,8 +86,18 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
             icon={<MdAddShoppingCart />}
             variant="outline"
             colorScheme="purple"
-            onClick={() => adicionarProdutoAoCarrinho(produto)}
+            onClick={() => {
+              adicionarProdutoAoCarrinho(produto);
+              console.log(`usuario: ${user.usuario.nome}`)
+              toast({
+                title: "Adicionado ao carrinho",
+                status: "success",
+                description: `${produto.nome} adicioado com sucesso!`,
+                duration: 3000,
+              });
+            }}
           />
+
         </ButtonGroup>
       </CardFooter>
     </Card>
