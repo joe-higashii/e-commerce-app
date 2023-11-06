@@ -22,6 +22,7 @@ import AccordionComentario from "../../components/Accordion/AccordionComentario.
 import { MdAddShoppingCart } from "react-icons/md";
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
+import { AiFillStar } from "react-icons/ai";
 
 const Produto = () => {
   const [produto, setProduto] = useState({});
@@ -44,9 +45,29 @@ const Produto = () => {
     const response = await api.get(`/produtos/${id}`);
     setProduto(response.data);
   };
+
+  const calcularMediaNotas = () => {
+    if (produto.comentarios && produto.comentarios.length > 0) {
+      const totalNotas = produto.comentarios.reduce(
+        (acumulador, comentario) => acumulador + comentario.nota,
+        0
+      );
+      const media = totalNotas / produto.comentarios.length;
+      return Math.round(media);
+    }
+    return 0;
+  };
+
   useEffect(() => {
     getProduto();
-  }, []);
+  }, [calcularMediaNotas]);
+
+  const notaMedia = calcularMediaNotas();
+  const quantidadeEstrelas = 5;
+  const arrayEstrelas = Array.from({ length: quantidadeEstrelas }, (_, index) => {
+    return index < notaMedia ? "gold" : "gray";
+  });
+
   return (
     <>
       <NavBar />
@@ -110,6 +131,20 @@ const Produto = () => {
 
       <br />
       <AccordionDesc descricao={produto.descricao} />
+      <div>
+        <Text fontSize={"1.2rem"} fontWeight={"bold"}>
+          AVALIAÇÃO
+        </Text>
+        {arrayEstrelas.map((cor, index) => (
+          <IconButton
+            key={index}
+            ml={5}
+            icon={<AiFillStar color={cor} />}
+            variant="outline"
+            colorScheme="yellow"
+          />
+        ))}
+      </div>
       <AccordionComentario />
       <Footer />
     </>
