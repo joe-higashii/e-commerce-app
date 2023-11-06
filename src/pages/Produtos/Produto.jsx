@@ -110,7 +110,7 @@ const Produto = () => {
 
       <br />
       <AccordionDesc descricao={produto.descricao} />
-      <AccordionComentario />
+      <AccordionComentario objProduto={{produto}}/>
       <Footer />
     </>
   );

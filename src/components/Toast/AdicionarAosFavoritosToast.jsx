@@ -26,15 +26,15 @@ const AdicionarAosFavoritosToast = ({ produtoId, favorito, produto }) => {
         //TOAST PROMISSE 
         toast.promise(favoritoPromisse, {
           success: {
-            title: "Promise resolvida",
+            title: "Adicionado",
             description: `Produto adicionado aos Favoritos`,
           },
           error: {
-            title: "Promise rejeitada",
+            title: "Removido",
             description: "Produto removido dos Favoritos",
           },
           loading: {
-            title: "Promise pendente",
+            title: "Um segundo...",
             description: "Adicionando aos Favoritos",
           },
         });
