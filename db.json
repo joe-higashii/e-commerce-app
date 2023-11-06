@@ -20,7 +20,7 @@
       "id": 1,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 33,
+      "quantidade": 32,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": true,
@@ -41,6 +41,11 @@
           "idUser": 1,
           "comentario": "fgfgnnfdghdfsfdgsdfgdfg",
           "nota": 0
+        },
+        {
+          "idUser": 1,
+          "comentario": "muito bom",
+          "nota": 4
         }
       ]
     },
@@ -139,7 +144,7 @@
       "quantidade": 37,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": true,
+      "favoritos": false,
       "categoria": "Periféricos",
       "comentarios": [
         {
@@ -190,7 +195,7 @@
       "quantidade": 34,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": true,
+      "favoritos": false,
       "categoria": "Cama",
       "comentarios": [
         {
@@ -235,104 +240,15 @@
       ]
     },
     {
-      "id": 2,
-      "valorTotal": 3544.9,
+      "valorTotal": 29.99,
       "idUser": 1,
       "itens": [
         {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "valorTotal": 629.79,
-      "idUser": 1,
-      "itens": [
-        {
-          "id": 1,
-          "quantidade": 4
-        },
-        {
-          "id": 2,
-          "quantidade": 7
-        },
-        {
-          "id": 3,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "valorTotal": 0,
-      "idUser": 1,
-      "itens": [],
-      "id": 4
-    },
-    {
-      "id": 5,
-      "valorTotal": 299.9,
-      "idUser": 2,
-      "itens": [
-        {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "valorTotal": 299.9,
-      "idUser": 1,
-      "itens": [
-        {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "valorTotal": 89.97,
-      "idUser": 1,
-      "itens": [
-        {
-          "idProduto": 8,
-          "quantidade": 1
-        },
-        {
-          "idProduto": 10,
-          "quantidade": 1
-        },
-        {
-          "idProduto": 9,
+          "idProduto": 1,
           "quantidade": 1
         }
       ],
-      "id": 7
-    },
-    {
-      "valorTotal": 59.98,
-      "idUser": 1,
-      "itens": [
-        {
-          "idProduto": 9,
-          "quantidade": 2
-        }
-      ],
-      "id": 8
+      "id": 2
     }
   ]
 }

@@ -47,6 +47,7 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
             alt="Green double couch with wooden legs"
             borderRadius="lg"
             boxSize="150px"
+            fit="contain"
           />
         </Flex>
         <Stack mt="6" spacing="3">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -14,8 +14,10 @@ import CustomEditor from "../Forms/CustomEditor";
 import { Button } from "@chakra-ui/react";
 import { AiFillStar } from "react-icons/ai";
 import { api } from "../../api/api";
+import { UserContext } from "../../context/UserContext.jsx";
 
 const AccordionComentario = ({ objProduto }) => {
+  const { user, setUser } = useContext(UserContext)
   const [editorValue, setEditorValue] = useState("");
   const [notaEstrela, setNotaEstrela] = useState(0);
 
@@ -99,10 +101,10 @@ const AccordionComentario = ({ objProduto }) => {
                   flexDir={"column"}
                 >
                   <Text fontSize={"1.2rem"} fontWeight={"bold"}>
-                    Usuário: {idUser}
+                    Usuário: {user.nome}
                   </Text>
 
-                  <Text>Nota: {nota} estrela</Text>
+                  <Text>Nota: {nota} Estrelas</Text>
                   <Text>{comentario}</Text>
                 </Flex>
               );

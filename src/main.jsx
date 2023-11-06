@@ -17,11 +17,11 @@ import Favoritos from "./pages/Favoritos/Favoritos.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {
@@ -43,11 +43,6 @@ const router = createBrowserRouter([
   {
     path: "/favoritos",
     element: <Favoritos />,
-  },
-  {
-    path: "/card/:id",
-    element: <CardCarrinho />,
-
   }
 ]);
 

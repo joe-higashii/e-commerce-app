@@ -29,6 +29,7 @@ const ListaProdutos = () => {
         }}
         gap={4}
         p={4}
+        minHeight={"100vh"}
       >
         {produtos.filter(produto => produto.quantidade >= 1).map(({ nome, imagem, resumo, preco, id, categoria, favoritos }) => (
           <CardProduto
