@@ -88,12 +88,11 @@ const CardProduto = ({ nome, imagem, resumo, preco, id, favorito }) => {
             colorScheme="purple"
             onClick={() => {
               adicionarProdutoAoCarrinho(produto);
-              // console.log(`usuario: ${user.usuario.nome}`)
               toast({
-                title: "Adicionado ao carrinho",
-                status: "success",
-                description: `${produto.nome} adicioado com sucesso!`,
-                duration: 3000,
+                title: user.nome === undefined ? "Usuario não logado":"Adicionado ao carrinho",
+                status: user.nome === undefined ? "error":"success",
+                description: user.nome === undefined ? `favor logar com um usuario cadastrado` : `${produto.nome} adicioado com sucesso!`,
+                duration: 3000
               });
             }}
           />
