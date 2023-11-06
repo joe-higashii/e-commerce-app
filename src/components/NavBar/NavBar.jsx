@@ -22,10 +22,12 @@ import { FaGitkraken } from "react-icons/fa";
 import { BsBagCheckFill } from "react-icons/bs";
 import CadastroModal from "../Modal/CadastroModal";
 import kraken from "../../../public/kraken.svg";
+import { UserContext } from "../../context/UserContext";
 
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
   const { categoria, setCategoria } = useContext(GeralContext);
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleCategoriaChange = async (e) => {
@@ -61,6 +63,11 @@ export const NavBar = () => {
     const produto = e.target.value;
     handlePesquisarInput();
   };
+
+  const handleSair = () => {
+    navigateHome()
+    window.location.reload()
+  }
 
   const getProdutos = async (e) => {
     const produto = e.target.value;
@@ -106,6 +113,16 @@ export const NavBar = () => {
           Login
         </Button>
         <CadastroModal />
+        <Button
+          size={"sm"}
+          variant={"ghost"}
+          colorScheme="black"
+          mt={4}
+          mr={1}
+          onClick={handleSair}
+        >
+          Sair
+        </Button>
       </Flex>
       <Flex
         display={{ base: "block", xl: "flex" }}
