@@ -1,11 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
       "nome": "Raphael da Rocha Pinto Barboza",
       "email": "raphael@email.com",
       "senha": "123456",
-      "carrinhoUsuario": []
+      "carrinhoUsuario": [
+        {
+          "nome": "Mouse com fio Logitech",
+          "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+          "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+          "preco": 29.99,
+          "id": 2,
+          "favorito": false,
+          "quantidade": 1
+        }
+      ],
+      "id": 1
     },
     {
       "nome": "Jose",
@@ -13,6 +23,23 @@
       "senha": "1234",
       "carrinhoUsuario": [],
       "id": 2
+    },
+    {
+      "nome": "Gabriel da Costa Garcia",
+      "email": "email@email.com",
+      "senha": "123456",
+      "carrinhoUsuario": [
+        {
+          "nome": "Mouse com fio Logitech",
+          "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+          "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+          "preco": 29.99,
+          "id": 2,
+          "favorito": false,
+          "quantidade": 1
+        }
+      ],
+      "id": 3
     }
   ],
   "produtos": [
@@ -53,7 +80,7 @@
       "id": 2,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 30,
+      "quantidade": 25,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
@@ -141,7 +168,7 @@
       "id": 6,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 37,
+      "quantidade": 35,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
@@ -249,6 +276,36 @@
         }
       ],
       "id": 2
+    },
+    {
+      "valorTotal": 149.95,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 2,
+          "quantidade": 4
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 3
+    },
+    {
+      "valorTotal": 59.98,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 2,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 4
     }
   ]
 }
