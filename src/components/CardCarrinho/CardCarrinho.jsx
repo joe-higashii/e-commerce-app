@@ -79,7 +79,6 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
       </GridItem>
     </Grid>
   </Card>
-    
   );
 };
 

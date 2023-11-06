@@ -6,6 +6,13 @@
       "email": "raphael@email.com",
       "senha": "123456",
       "carrinhoUsuario": []
+    },
+    {
+      "nome": "Jose",
+      "email": "jose@email.com",
+      "senha": "1234",
+      "carrinhoUsuario": [],
+      "id": 2
     }
   ],
   "produtos": [
@@ -13,12 +20,34 @@
       "id": 1,
       "nome": "Mouse com fio Logitech",
       "preco": 29.99,
-      "quantidade": 33,
+      "quantidade": 32,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": true,
       "descricao": "<strong>Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play</strong>\n\nO M90 fornece o necessário para seu conforto e controle confiável de seu computador. Desenvolvido pela Logitech, a marca especialista em mouses, apresentando a qualidade de quem já produziu mais de um bilhão de mouses. Não é necessário instalar nenhum software.\n\n<strong>Conectividade USB e Design Ambidestro</strong>\n\nO Mouse com fio USB Logitech M90 tem conexão por fio, basta conectá-lo a uma porta USB e usá-lo imediatamente. Projetado para manter ambas as mãos. E então, você vai se sentir confortável, mesmo após horas de uso.\n\n<strong>Rastreamento óptico de alta definição</strong>\n\nVocê vai desfrutar de resposta, controle suave do cursor, rastreamento preciso e seleção de texto fácil, graças à alta definição de rastreamento óptico (1000 dpi), oferece um dispositivo responsivo com controle suave do cursor para mais precisão e facilidade ao selecionar textos.\n\n<strong>Fácil Configuração</strong>\n\nA instalação é rápida e fácil, apenas conecte o cabo a uma porta USB. Não há software para instalar. E já que é com fio, você pode simplesmente ligar o cabo a uma porta USB e usá-lo imediatamente. ",
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "asdasdasdasd",
+          "nota": 0
+        },
+        {
+          "idUser": 1,
+          "comentario": "fgfgnnfdghdfsfdgsdfgdfg",
+          "nota": 0
+        },
+        {
+          "idUser": 1,
+          "comentario": "muito bom",
+          "nota": 4
+        }
+      ]
     },
     {
       "id": 2,
@@ -28,7 +57,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 3,
@@ -38,7 +74,34 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "nota 1",
+          "nota": 1
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 3",
+          "nota": 3
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 3",
+          "nota": 3
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 5",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "é intencional e o botafogo pode ser campeão",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 4,
@@ -48,7 +111,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 5,
@@ -58,7 +128,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 6,
@@ -67,8 +144,15 @@
       "quantidade": 37,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": true,
-      "categoria": "Periféricos"
+      "favoritos": false,
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 7,
@@ -78,7 +162,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Periféricos"
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 8,
@@ -88,7 +179,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "banho"
+      "categoria": "banho",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 9,
@@ -97,8 +195,15 @@
       "quantidade": 34,
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "favoritos": true,
-      "categoria": "Cama"
+      "favoritos": false,
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     },
     {
       "id": 10,
@@ -108,7 +213,14 @@
       "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
-      "categoria": "Cama"
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
     }
   ],
   "pedidos": [
@@ -128,104 +240,15 @@
       ]
     },
     {
-      "id": 2,
-      "valorTotal": 3544.9,
+      "valorTotal": 29.99,
       "idUser": 1,
       "itens": [
         {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "valorTotal": 629.79,
-      "idUser": 1,
-      "itens": [
-        {
-          "id": 1,
-          "quantidade": 4
-        },
-        {
-          "id": 2,
-          "quantidade": 7
-        },
-        {
-          "id": 3,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "valorTotal": 0,
-      "idUser": 1,
-      "itens": [],
-      "id": 4
-    },
-    {
-      "id": 5,
-      "valorTotal": 299.9,
-      "idUser": 2,
-      "itens": [
-        {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "valorTotal": 299.9,
-      "idUser": 1,
-      "itens": [
-        {
-          "id": 2,
-          "quantidade": 10
-        },
-        {
-          "id": 1,
-          "quantidade": 10
-        }
-      ]
-    },
-    {
-      "valorTotal": 89.97,
-      "idUser": 1,
-      "itens": [
-        {
-          "idProduto": 8,
-          "quantidade": 1
-        },
-        {
-          "idProduto": 10,
-          "quantidade": 1
-        },
-        {
-          "idProduto": 9,
+          "idProduto": 1,
           "quantidade": 1
         }
       ],
-      "id": 7
-    },
-    {
-      "valorTotal": 59.98,
-      "idUser": 1,
-      "itens": [
-        {
-          "idProduto": 9,
-          "quantidade": 2
-        }
-      ],
-      "id": 8
+      "id": 2
     }
   ]
 }

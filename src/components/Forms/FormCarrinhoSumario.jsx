@@ -125,7 +125,14 @@ export const FormCarrinhoSumario = () => {
   };
 
   return (
-    <Stack spacing="8" borderWidth="1px" borderRadius={"12px"} padding="8" width="full" border={"1px solid #D9D9D9"}>
+    <Stack
+      spacing="8"
+      borderWidth="1px"
+      borderRadius={"12px"}
+      padding="8"
+      width="full"
+      border={"1px solid #D9D9D9"}
+    >
       <Heading size="md">Sumário do Pedido</Heading>
 
       <Stack spacing="6">
@@ -180,7 +187,7 @@ export const FormCarrinhoSumario = () => {
             fontSize="md"
             variant={"ghost"}
             onClick={handleEsvaziarCarrinho}
-            icon={<FaTrashAlt />}
+            icon={<FaTrashAlt style={{ fontSize: "2rem" }} />}
             width="2rem"
           ></IconButton>
         </Tooltip>

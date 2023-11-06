@@ -1,25 +1,35 @@
-import { useState } from 'react';
-import { 
+import { useState } from "react";
+import {
   BtnBold,
   BtnItalic,
+  createButton,
   Editor,
   EditorProvider,
-  Toolbar
-} from 'react-simple-wysiwyg';
+  Toolbar,
+  HtmlButton,
+} from "react-simple-wysiwyg";
 
-export default function CustomEditor() {
-  const [value, setValue] = useState('simple text');
+export default function CustomEditor({ onEditorChange }) {
+  const [value, setValue] = useState("");
 
   function onChange(e) {
-    setValue(e.target.value);
+    const editorValue = e.target.value;
+    setValue(editorValue);
+    onEditorChange(editorValue);
   }
 
   return (
     <EditorProvider>
-      <Editor value={value} onChange={onChange}>
+      <Editor
+        placeholder="Escreva seu comentário aqui..."
+        value={value}
+        onChange={onChange}
+      >
         <Toolbar>
           <BtnBold />
           <BtnItalic />
+          <HtmlButton />
+          <createButton />
         </Toolbar>
       </Editor>
     </EditorProvider>
