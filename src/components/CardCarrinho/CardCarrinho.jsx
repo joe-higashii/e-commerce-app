@@ -56,7 +56,7 @@ const CardCarrinhoItem = ({ nome, imagem, preco, quantidade, resumo, id }) => {
       </GridItem>
   
       <GridItem>
-        <SeletorQuantidade quantidade={produto.quantidade} />
+        <SeletorQuantidade quantidade={produto.quantidade}totalitens={quantidade}/>
       </GridItem>
   
       <GridItem>
