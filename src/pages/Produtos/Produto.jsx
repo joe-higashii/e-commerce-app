@@ -145,7 +145,6 @@ const Produto = () => {
         ))}
       </div>
       <AccordionComentario objProduto={{produto}}/>
-      <AccordionComentario />
       <Footer />
     </>
   );

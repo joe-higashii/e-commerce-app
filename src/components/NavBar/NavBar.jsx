@@ -18,6 +18,7 @@ import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
 import { GeralContext } from "../../context/GeralContext";
 import { FaGitkraken } from "react-icons/fa";
+import CadastroModal from "../Modal/CadastroModal";
 
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
@@ -83,6 +84,7 @@ export const NavBar = () => {
 
   return (
     <>
+      <CadastroModal />
       <Flex
         display={{ base: "block", xl: "flex" }}
         wrap={"nowrap"}
