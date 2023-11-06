@@ -70,6 +70,7 @@ const Produto = () => {
 
   return (
     <>
+
       <NavBar />
       <Grid
         h="300px"
@@ -131,21 +132,22 @@ const Produto = () => {
 
       <br />
       <div>
-        <Text fontSize={"1.2rem"} fontWeight={"bold"}>
+        <Text mt={'.8rem'} mb={'.8rem'} fontSize={"1.2rem"} fontWeight={"bold"}>
           AVALIAÇÃO
         </Text>
         {arrayEstrelas.map((cor, index) => (
           <IconButton
             key={index}
             ml={5}
+            mb={'2rem'}
             icon={<AiFillStar color={cor} />}
             variant="outline"
             colorScheme="yellow"
           />
         ))}
       </div>
+      <AccordionDesc />
       <AccordionComentario objProduto={{produto}}/>
-      <AccordionComentario />
       <Footer />
     </>
   );
