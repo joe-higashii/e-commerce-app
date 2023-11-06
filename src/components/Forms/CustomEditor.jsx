@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { 
   BtnBold,
   BtnItalic,
+  createButton, 
   Editor,
   EditorProvider,
-  Toolbar
+  Toolbar,
+  HtmlButton
 } from 'react-simple-wysiwyg';
 
 export default function CustomEditor() {
-  const [value, setValue] = useState('simple text');
+  const [value, setValue] = useState('Digite seu comentário aqui...');
 
   function onChange(e) {
     setValue(e.target.value);
@@ -16,10 +18,12 @@ export default function CustomEditor() {
 
   return (
     <EditorProvider>
-      <Editor value={value} onChange={onChange}>
+      <Editor value={value} onChange={onChange} >
         <Toolbar>
           <BtnBold />
           <BtnItalic />
+          <HtmlButton />
+          <createButton />
         </Toolbar>
       </Editor>
     </EditorProvider>

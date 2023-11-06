@@ -130,7 +130,6 @@ const Produto = () => {
       </Grid>
 
       <br />
-      <AccordionDesc descricao={produto.descricao} />
       <div>
         <Text fontSize={"1.2rem"} fontWeight={"bold"}>
           AVALIAÇÃO
@@ -145,6 +144,7 @@ const Produto = () => {
           />
         ))}
       </div>
+      <AccordionComentario objProduto={{produto}}/>
       <AccordionComentario />
       <Footer />
     </>
