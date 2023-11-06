@@ -170,7 +170,7 @@ const Footer = () => {
               <a href="">
                 <IconButton icon={<FaMailBulk />}>Email</IconButton>
               </a>
-              <a href="">
+              <a href="https://github.com/joe-higashii/e-commerce-app" target="blank">
                 <IconButton icon={<FaGit />}>Github</IconButton>
               </a>
               <a href="">
