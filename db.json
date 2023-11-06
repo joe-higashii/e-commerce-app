@@ -6,6 +6,13 @@
       "email": "raphael@email.com",
       "senha": "123456",
       "carrinhoUsuario": []
+    },
+    {
+      "nome": "Jose",
+      "email": "jose@email.com",
+      "senha": "1234",
+      "carrinhoUsuario": [],
+      "id": 2
     }
   ],
   "produtos": [
@@ -19,7 +26,7 @@
       "favoritos": true,
       "descricao": "<strong>Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play</strong>\n\nO M90 fornece o necessário para seu conforto e controle confiável de seu computador. Desenvolvido pela Logitech, a marca especialista em mouses, apresentando a qualidade de quem já produziu mais de um bilhão de mouses. Não é necessário instalar nenhum software.\n\n<strong>Conectividade USB e Design Ambidestro</strong>\n\nO Mouse com fio USB Logitech M90 tem conexão por fio, basta conectá-lo a uma porta USB e usá-lo imediatamente. Projetado para manter ambas as mãos. E então, você vai se sentir confortável, mesmo após horas de uso.\n\n<strong>Rastreamento óptico de alta definição</strong>\n\nVocê vai desfrutar de resposta, controle suave do cursor, rastreamento preciso e seleção de texto fácil, graças à alta definição de rastreamento óptico (1000 dpi), oferece um dispositivo responsivo com controle suave do cursor para mais precisão e facilidade ao selecionar textos.\n\n<strong>Fácil Configuração</strong>\n\nA instalação é rápida e fácil, apenas conecte o cabo a uma porta USB. Não há software para instalar. E já que é com fio, você pode simplesmente ligar o cabo a uma porta USB e usá-lo imediatamente. ",
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -36,7 +43,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -53,7 +60,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -70,7 +77,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -87,7 +94,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -104,7 +111,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": true,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -121,7 +128,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Periféricos",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -138,7 +145,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "banho",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -155,7 +162,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": true,
       "categoria": "Cama",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
@@ -172,7 +179,7 @@
       "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "favoritos": false,
       "categoria": "Cama",
-      "comentarios":[
+      "comentarios": [
         {
           "idUser": 1,
           "comentario": "teste",
