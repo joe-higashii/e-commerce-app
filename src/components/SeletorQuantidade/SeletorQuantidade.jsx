@@ -4,11 +4,11 @@ import { HStack } from "@chakra-ui/layout"
 import { useNumberInput } from "@chakra-ui/number-input"
 
 
-const SeletorQuantidade = ({ quantidade }) => {
+const SeletorQuantidade = ({ quantidade, totalitens }) => {
     const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
         useNumberInput({
             step: 1,
-            defaultValue: 1,
+            defaultValue: totalitens,
             min: 1,
             max: quantidade,
             precision: 0,
