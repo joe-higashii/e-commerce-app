@@ -4,12 +4,21 @@ import { FaHeart } from 'react-icons/fa';
 import { api } from "../../api/api";
 
 const AdicionarAosFavoritosToast = ({ produtoId, favorito, produto }) => {
-  // console.log(produtoId, favorito, produto)
+  // Usar o prop de favorito para definir cor inicial
+  const initialColor = favorito ? "red" : "gray";
+
+  // useState para as cores modificarem na tela automagicamente
+  const [color, setColor] = useState(initialColor);
   const toast = useToast();
+
   return (
     <IconButton
       onClick={async () => {
         console.log(`atual: ${favorito}, modificado ${!favorito}`)
+        // Toggle da cor dependendo do useState
+        const newColor = color === "red" ? "gray" : "red";
+        setColor(newColor);
+
         try {
           await api.patch(`/produtos/${produto.id}`, {
             favoritos: !favorito,
@@ -19,31 +28,18 @@ const AdicionarAosFavoritosToast = ({ produtoId, favorito, produto }) => {
           console.error(`Erro ao atualizar o favorito do produto ${produto.id}, status atual: ${produto.favoritos}, status requisitado: ${!favorito}:`, error);
         }
 
-        const favoritoPromisse = new Promise((resolve, reject) => {
-          (favorito ? setTimeout(() => reject(100), 1500) : setTimeout(() => resolve(100), 1500));
+        // Nova logica de toast para modificar tipo dependendo da cor do newColor
+        // Removido promise e loading state
+        toast({
+          title: newColor === "red" ? "Adicionado aos Favoritos" : "Removido dos Favoritos",
+          status: newColor === "red" ? 'success':'error',
+          description: `Status de favorito do produto ${produto.id} atualizado`,
+          duration: 3000,
         });
-
-        //TOAST PROMISSE 
-        toast.promise(favoritoPromisse, {
-          success: {
-            title: "Adicionado",
-            description: `Produto adicionado aos Favoritos`,
-          },
-          error: {
-            title: "Removido",
-            description: "Produto removido dos Favoritos",
-          },
-          loading: {
-            title: "Um segundo...",
-            description: "Adicionando aos Favoritos",
-          },
-        });
-
-
 
       }}
       ml={5}
-      icon={<FaHeart color={favorito ? "red" : "gray"} />} //ativo ? "red" : "gray"
+      icon={<FaHeart color={color} />} //ativo ? "red" : "gray"
       variant="outline"
       colorScheme="red"
     />

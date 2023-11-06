@@ -11,7 +11,7 @@ export default function FormularioLogin() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const { nome, setNome, idUser, setIdUser } = useContext(UserContext)
+  const { nome, setNome, idUser, setIdUser, user, setUser } = useContext(UserContext)
 
   const getUsers = async () => {
     try {
@@ -32,7 +32,7 @@ export default function FormularioLogin() {
     e.preventDefault();
 
     if (!loading) {
-      const user = users.find((user) => user.email === email && user.senha === password);
+      setUser(users.find((user) => user.email === email && user.senha === password));
 
       if (user) {
         setNome(user.nome);
