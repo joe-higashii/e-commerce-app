@@ -27,7 +27,7 @@ import { UserContext } from "../../context/UserContext";
 export const NavBar = () => {
   const { produtos, setProdutos } = useContext(GeralContext);
   const { categoria, setCategoria } = useContext(GeralContext);
-  const { setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleCategoriaChange = async (e) => {
@@ -102,6 +102,33 @@ export const NavBar = () => {
   return (
     <>
       <Flex justifyContent={"flex-end"}>
+        {user.nome !== undefined ? 
+          <div style={{ marginRight:'20px', display:'inline-flex' }}>
+            <p style={{ position: "relative", display: "inline-block" }}>
+              <span
+                style={{
+                  content: "''",
+                  display: "block",
+                  width: "40px",
+                  height: "40px",
+                  backgroundImage: "url(../../../public/people.svg)",
+                  backgroundSize: "cover",
+                  position: "absolute",
+                  left: "-50px",
+                  top: "60%",
+                  transform: "translateY(-50%)",
+                }}
+              ></span>
+            </p>
+            <Text
+            size={"sm"}
+            variant={"ghost"}
+            colorScheme="black"
+            mt={'19px'}
+            mr={5}
+            >{`Olá, ${user.nome}`}</Text>
+          </div>
+        : ''}
         <Button
           size={"sm"}
           variant={"ghost"}
