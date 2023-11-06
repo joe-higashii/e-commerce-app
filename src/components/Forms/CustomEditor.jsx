@@ -9,16 +9,18 @@ import {
   HtmlButton
 } from 'react-simple-wysiwyg';
 
-export default function CustomEditor() {
+export default function CustomEditor({ onEditorChange }) {
   const [value, setValue] = useState('Digite seu comentário aqui...');
 
   function onChange(e) {
-    setValue(e.target.value);
+    const editorValue = e.target.value;
+    setValue(editorValue);
+    onEditorChange(editorValue);
   }
 
   return (
     <EditorProvider>
-      <Editor value={value} onChange={onChange} >
+      <Editor value={value} onChange={onChange}>
         <Toolbar>
           <BtnBold />
           <BtnItalic />
