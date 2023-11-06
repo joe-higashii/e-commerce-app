@@ -18,6 +18,7 @@ import { MdFavoriteBorder, MdAddShoppingCart } from "react-icons/md";
 import { api } from "../../api/api";
 import { GeralContext } from "../../context/GeralContext";
 import { FaGitkraken } from "react-icons/fa";
+import { BsBagCheckFill } from "react-icons/bs";
 import CadastroModal from "../Modal/CadastroModal";
 
 export const NavBar = () => {
@@ -78,6 +79,10 @@ export const NavBar = () => {
     navigate("/carrinho");
   };
 
+  const navigatePedidos = () => {
+    navigate("/pedidos");
+  };
+
   const navigateHome = () => {
     navigate("/home");
   };
@@ -88,10 +93,12 @@ export const NavBar = () => {
 
   return (
     <>
-      <Button mt={4} mr={1} onClick={navigateLogin}>
+      <Flex justifyContent={'flex-end'}>
+      <Button size={'sm'} variant={'ghost'} colorScheme="black" mt={4} mr={1} onClick={navigateLogin}>
         Login
       </Button>
       <CadastroModal />
+      </Flex>
       <Flex
         display={{ base: "block", xl: "flex" }}
         wrap={"nowrap"}
@@ -165,6 +172,15 @@ export const NavBar = () => {
           w="16rem"
         >
           Carrinho
+        </Button>
+        <Button
+          onClick={navigatePedidos}
+          breakpoint="(min-width: 481px)"
+          leftIcon={<BsBagCheckFill />}
+          variant="ghost"
+          w="16rem"
+        >
+          Pedidos
         </Button>
       </Flex>
       {/* NAVBAR MOBILE LATERAIS MOBILE*/}

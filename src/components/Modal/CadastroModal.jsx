@@ -46,7 +46,7 @@ function CadastroModal() {
 
   return (
     <>
-      <Button mt={4} onClick={onOpen} >
+      <Button size={'sm'} variant={'ghost'} colorScheme="purple" mt={4} onClick={onOpen} >
         Cadastrar
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
