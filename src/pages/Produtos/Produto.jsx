@@ -146,7 +146,7 @@ const Produto = () => {
           />
         ))}
       </div>
-      <AccordionDesc />
+      <AccordionDesc descricao={produto.descricao}/>
       <AccordionComentario objProduto={{produto}}/>
       <Footer />
     </>
