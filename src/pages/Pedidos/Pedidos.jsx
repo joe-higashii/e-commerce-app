@@ -110,7 +110,7 @@ const Pedidos = () => {
                             >
                               <GridItem rowSpan={2} colSpan={1}>
                                 <img
-                                  src={produto.imgurl}
+                                  src={produto.imagem}
                                   alt="Produto"
                                   width={"80px"}
                                 />

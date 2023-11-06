@@ -33,7 +33,7 @@ const AdicionarAosFavoritosToast = ({ produtoId, favorito, produto }) => {
         toast({
           title: newColor === "red" ? "Adicionado aos Favoritos" : "Removido dos Favoritos",
           status: newColor === "red" ? 'success':'error',
-          description: `Status de favorito do produto ${produto.id} atualizado`,
+          description: newColor === "red" ? `${produto.nome} adicioado com sucesso!`:`${produto.nome} foi removido dos favoritos`,
           duration: 3000,
         });
 
