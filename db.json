@@ -4,62 +4,7 @@
       "nome": "Raphael da Rocha Pinto Barboza",
       "email": "raphael@email.com",
       "senha": "123456",
-      "carrinhoUsuario": [
-        {
-          "nome": "Mouse com fio HP",
-          "imagem": "https://www.atera.com.br/imgadic/H2C21AA.1.jpg",
-          "resumo": "Mouse com fio HP X1000 com sensor óptico de alta definição",
-          "preco": 24.99,
-          "id": 3,
-          "favorito": false,
-          "quantidade": 2
-        },
-        {
-          "nome": "Mouse com fio Logitech",
-          "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
-          "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
-          "preco": 29.99,
-          "id": 1,
-          "favorito": false,
-          "quantidade": 1
-        },
-        {
-          "nome": "Mouse sem fio Logitech",
-          "imagem": "https://m.media-amazon.com/images/I/61yykJ5oYKL._AC_SL1500_.jpg",
-          "resumo": "Mouse sem fio Logitech M325 com design ergonômico e rolagem suave",
-          "preco": 39.99,
-          "id": 2,
-          "favorito": false,
-          "quantidade": 1
-        },
-        {
-          "nome": "NVIDIA GeForce RTX 3090",
-          "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr7n9kaZp2PglO5zN0cUF060vsR9Vl8f7nee1-IS4ZpkwvhOomnrLVQYFaBFs25yv9vGCcJXqloiXo4tM8bw7KakqqyDyj",
-          "resumo": "Placa de vídeo de última geração com 24 GB de memória GDDR6X",
-          "preco": 1499.99,
-          "id": 4,
-          "favorito": false,
-          "quantidade": 2
-        },
-        {
-          "nome": "NVIDIA GeForce RTX 3060",
-          "imagem": "https://images.versus.io/objects/nvidia-geforce-rtx-3060.front.variety.1610630274718.jpg",
-          "resumo": "Placa de vídeo de médio alcance com 12 GB de memória GDDR6",
-          "preco": 1899.99,
-          "id": 7,
-          "favorito": false,
-          "quantidade": 1
-        },
-        {
-          "nome": "NVIDIA GeForce GTX 1650",
-          "imagem": "https://tpucdn.com/gpu-specs/images/c/3411-front.jpg",
-          "resumo": "Placa de vídeo econômica com 4 GB de memória GDDR5",
-          "preco": 1199.99,
-          "id": 8,
-          "favorito": false,
-          "quantidade": 1
-        }
-      ],
+      "carrinhoUsuario": [],
       "id": 1
     },
     {
@@ -129,6 +74,13 @@
         }
       ],
       "id": 4
+    },
+    {
+      "nome": "lucas",
+      "email": "lucas@mail.com",
+      "senha": "teste",
+      "carrinhoUsuario": [],
+      "id": 5
     }
   ],
   "produtos": [
@@ -225,7 +177,7 @@
       "id": 4,
       "nome": "NVIDIA GeForce RTX 3090",
       "preco": 1499.99,
-      "quantidade": 8,
+      "quantidade": 6,
       "resumo": "Placa de vídeo de última geração com 24 GB de memória GDDR6X",
       "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr7n9kaZp2PglO5zN0cUF060vsR9Vl8f7nee1-IS4ZpkwvhOomnrLVQYFaBFs25yv9vGCcJXqloiXo4tM8bw7KakqqyDyj",
       "favoritos": false,
@@ -243,7 +195,7 @@
       "id": 5,
       "nome": "NVIDIA GeForce RTX 3070 Ti",
       "preco": 3849.99,
-      "quantidade": 15,
+      "quantidade": 14,
       "resumo": "Placa de vídeo de alto desempenho com 8 GB de memória GDDR6X",
       "imagem": "https://www.custompc.com/wp-content/sites/custompc/2021/07/nvidia-geforce-rtx-3070-ti-review-01.jpg",
       "favoritos": false,
@@ -261,7 +213,7 @@
       "id": 6,
       "nome": "NVIDIA GeForce GTX 1660 Super",
       "preco": 1299.99,
-      "quantidade": 20,
+      "quantidade": 19,
       "resumo": "Placa de vídeo para jogos com 6 GB de memória GDDR6",
       "imagem": "https://images.versus.io/objects/nvidia-geforce-gtx-1660-super.front.variety.1576684641045.jpg",
       "favoritos": false,
@@ -302,7 +254,7 @@
       "imagem": "https://tpucdn.com/gpu-specs/images/c/3411-front.jpg",
       "favoritos": false,
       "descricao": "<strong>NVIDIA GeForce GTX 1650</strong><br><br>A placa de vídeo NVIDIA GeForce GTX 1650 oferece desempenho econômico para jogadores casuais. Com 4 GB de memória GDDR5, você terá uma ótima experiência de jogo sem gastar muito.",
-      "categoria": "banho",
+      "categoria": "Banho",
       "comentarios": [
         {
           "idUser": 1,
@@ -958,6 +910,34 @@
           "nota": 5
         }
       ]
+    },
+    {
+      "id": 45,
+      "nome": "Carburador de Santana",
+      "preco": 1057.85,
+      "quantidade": 15,
+      "resumo": "Santana tem carburador",
+      "imagem": "https://static3.tcdn.com.br/img/img_prod/229689/carburador_3e_santana_quantum_versailles_royalle_2_0_gasolina_solex_brosol_3760_1_20201006145012.jpg",
+      "favoritos": true,
+      "descricao": "<strong>Carburador 2E Volkswagen Ford Para Motor AP 1.8 e AP 2.0 à Gasolina</strong>\n\nO carburador é um dos componentes mecânicos mais importantes no sistema de alimentação de combustível de motores a combustão interna. Ele fica responsável por misturar o combustível com o ar que entra no motor, criando uma mistura de ar-combustível que será queimada nos cilindros do motor para gerar energia e movimentação.\n\n",
+      "categoria": "Hardware",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "Não tem carburador",
+          "nota": 1
+        },
+        {
+          "idUser": 1,
+          "comentario": "Tem carburador",
+          "nota": 5
+        }
+      ]
     }
   ],
   "pedidos": [
@@ -1027,6 +1007,40 @@
         }
       ],
       "id": 5
+    },
+    {
+      "valorTotal": 6649.969999999999,
+      "idUser": 1,
+      "itens": [
+        {
+          "idProduto": 4,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 5,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "valorTotal": 2557.84,
+      "idUser": 5,
+      "itens": [
+        {
+          "idProduto": 45,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 4,
+          "quantidade": 1
+        }
+      ],
+      "id": 7
     }
   ]
 }
