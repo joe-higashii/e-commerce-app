@@ -60,9 +60,9 @@ const Pedidos = () => {
     <div style={{ minHeight: "100vh" }}>
       <NavBar />
       <Text mb={'1rem'} mt={'1.5rem'} align={"start"} fontSize={"2rem"}>
-          <strong>{user.nome !== undefined ? `${user.nome}` : 'Faça login para acessar seus pedidos'}</strong>
+          <strong>{user && user.nome !== undefined ? `${user.nome}` : 'Faça login para acessar seus pedidos'}</strong>
         </Text>
-      <Grid templateRows={`repeat(${pedidos.length}, 1fr)`} gap={4}>
+      <Grid minH={'40vh'} templateRows={`repeat(${pedidos.length}, 1fr)`} gap={4}>
         {pedidos.map(({ id, valorTotal, itens }, index) => (
           <div key={id}>
             <Accordion

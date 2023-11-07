@@ -27,6 +27,7 @@ const Favoritos = () => {
           md: "repeat(2, 1fr)",
           lg: "repeat(3, 1fr)",
         }}
+        minH={'50vh'}
         gap={4}
         p={4}
       >
