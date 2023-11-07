@@ -1,0 +1,1046 @@
+{
+  "users": [
+    {
+      "nome": "Raphael da Rocha Pinto Barboza",
+      "email": "raphael@email.com",
+      "senha": "123456",
+      "carrinhoUsuario": [],
+      "id": 1
+    },
+    {
+      "nome": "Jose",
+      "email": "jose@email.com",
+      "senha": "1234",
+      "carrinhoUsuario": [],
+      "id": 2
+    },
+    {
+      "nome": "Gabriel da Costa Garcia",
+      "email": "email@email.com",
+      "senha": "123456",
+      "carrinhoUsuario": [
+        {
+          "nome": "Mouse com fio Logitech",
+          "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+          "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+          "preco": 29.99,
+          "id": 2,
+          "favorito": false,
+          "quantidade": 1
+        }
+      ],
+      "id": 3
+    },
+    {
+      "nome": "Leonardo Lucas",
+      "email": "leonardolucas013@gmail.com",
+      "senha": "123456",
+      "carrinhoUsuario": [
+        {
+          "nome": "Mouse com fio Logitech",
+          "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+          "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+          "preco": 29.99,
+          "id": 1,
+          "favorito": true,
+          "quantidade": 32
+        },
+        {
+          "nome": "NVIDIA GeForce RTX 3090",
+          "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr7n9kaZp2PglO5zN0cUF060vsR9Vl8f7nee1-IS4ZpkwvhOomnrLVQYFaBFs25yv9vGCcJXqloiXo4tM8bw7KakqqyDyj",
+          "resumo": "Placa de vídeo de última geração com 24 GB de memória GDDR6X",
+          "preco": 1499.99,
+          "id": 4,
+          "favorito": true,
+          "quantidade": 8
+        },
+        {
+          "nome": "Intel Core i9-12900K",
+          "imagem": "https://img.terabyteshop.com.br/produto/g/processador-intel-core-i9-12900k-32ghz-52ghz-turbo-12-geracao-16-cores-24-threads-lga-1700-bx8071512900k_132455.jpg",
+          "resumo": "Processador de última geração com 16 núcleos e 32 threads",
+          "preco": 2199.99,
+          "id": 13,
+          "favorito": true,
+          "quantidade": 12
+        },
+        {
+          "nome": "Mouse sem fio Logitech",
+          "imagem": "https://m.media-amazon.com/images/I/61yykJ5oYKL._AC_SL1500_.jpg",
+          "resumo": "Mouse sem fio Logitech M325 com design ergonômico e rolagem suave",
+          "preco": 39.99,
+          "id": 2,
+          "favorito": true,
+          "quantidade": 13
+        }
+      ],
+      "id": 4
+    },
+    {
+      "nome": "lucas",
+      "email": "lucas@mail.com",
+      "senha": "teste",
+      "carrinhoUsuario": [],
+      "id": 5
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Mouse com fio Logitech",
+      "preco": 29.99,
+      "quantidade": 31,
+      "resumo": "Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play",
+      "imagem": "https://m.media-amazon.com/images/I/617w9nbQooL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Mouse com fio USB Logitech M90 com Design Ambidestro e Facilidade Plug and Play</strong>\n\nO M90 fornece o necessário para seu conforto e controle confiável de seu computador. Desenvolvido pela Logitech, a marca especialista em mouses, apresentando a qualidade de quem já produziu mais de um bilhão de mouses. Não é necessário instalar nenhum software.\n\n<strong>Conectividade USB e Design Ambidestro</strong>\n\nO Mouse com fio USB Logitech M90 tem conexão por fio, basta conectá-lo a uma porta USB e usá-lo imediatamente. Projetado para manter ambas as mãos. E então, você vai se sentir confortável, mesmo após horas de uso.\n\n<strong>Rastreamento óptico de alta definição</strong>\n\nVocê vai desfrutar de resposta, controle suave do cursor, rastreamento preciso e seleção de texto fácil, graças à alta definição de rastreamento óptico (1000 dpi), oferece um dispositivo responsivo com controle suave do cursor para mais precisão e facilidade ao selecionar textos.\n\n<strong>Fácil Configuração</strong>\n\nA instalação é rápida e fácil, apenas conecte o cabo a uma porta USB. Não há software para instalar. E já que é com fio, você pode simplesmente ligar o cabo a uma porta USB e usá-lo imediatamente. ",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "asdasdasdasd",
+          "nota": 0
+        },
+        {
+          "idUser": 1,
+          "comentario": "fgfgnnfdghdfsfdgsdfgdfg",
+          "nota": 0
+        },
+        {
+          "idUser": 1,
+          "comentario": "muito bom",
+          "nota": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Mouse sem fio Logitech",
+      "preco": 39.99,
+      "quantidade": 23,
+      "resumo": "Mouse sem fio Logitech M325 com design ergonômico e rolagem suave",
+      "imagem": "https://m.media-amazon.com/images/I/61yykJ5oYKL._AC_SL1500_.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Mouse sem fio Logitech M325 com design ergonômico e rolagem suave</strong>\n\nO Logitech M325 é um mouse sem fio com um design ergonômico que se encaixa perfeitamente na palma da sua mão. Ele possui uma roda de rolagem suave para facilitar a navegação na web e um receptor USB compacto que pode ser armazenado no mouse.\n\n<strong>Rastreamento Óptico de Alta Precisão</strong>\n\nCom rastreamento óptico de alta precisão, você terá um controle preciso do cursor e movimentos suaves. Ideal para trabalho e lazer.\n\n<strong>Conexão Sem Fio Avançada</strong>\n\nA tecnologia sem fio avançada oferece uma conexão estável e confiável a uma distância de até 10 metros. Não há necessidade de se preocupar com cabos emaranhados.\n\n<strong>Bateria de Longa Duração</strong>\n\nA bateria do Logitech M325 tem uma vida útil excepcional, o que significa que você pode passar meses sem trocar as pilhas.\n\n<strong>Compatibilidade Universal</strong>\n\nEste mouse é compatível com Windows, Mac e outros sistemas operacionais, tornando-o uma escolha versátil para qualquer computador.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Mouse com fio HP",
+      "preco": 24.99,
+      "quantidade": 38,
+      "resumo": "Mouse com fio HP X1000 com sensor óptico de alta definição",
+      "imagem": "https://www.atera.com.br/imgadic/H2C21AA.1.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Mouse com fio HP X1000 com sensor óptico de alta definição</strong>\n\nO mouse com fio HP X1000 oferece um design elegante e confortável para uso diário. Seu sensor óptico de alta definição fornece um controle preciso do cursor.\n\n<strong>Design Ergonômico</strong>\n\nEste mouse foi projetado para caber confortavelmente na mão, reduzindo a fadiga durante longos períodos de uso. Os botões são táteis e responsivos.\n\n<strong>Rastreamento Óptico de Alta Definição</strong>\n\nO sensor óptico de alta definição proporciona um rastreamento suave e preciso em várias superfícies. Com uma resolução de 1600 DPI, você pode ajustar a sensibilidade de acordo com suas necessidades.\n\n<strong>Fácil de Configurar</strong>\n\nA instalação é simples e direta. Basta conectar o cabo USB à porta do seu computador e começar a usá-lo imediatamente. Não são necessários drivers adicionais.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "nota 1",
+          "nota": 1
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 3",
+          "nota": 3
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 3",
+          "nota": 3
+        },
+        {
+          "idUser": 1,
+          "comentario": "nota 5",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "é intencional e o botafogo pode ser campeão",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "NVIDIA GeForce RTX 3090",
+      "preco": 1499.99,
+      "quantidade": 6,
+      "resumo": "Placa de vídeo de última geração com 24 GB de memória GDDR6X",
+      "imagem": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSr7n9kaZp2PglO5zN0cUF060vsR9Vl8f7nee1-IS4ZpkwvhOomnrLVQYFaBFs25yv9vGCcJXqloiXo4tM8bw7KakqqyDyj",
+      "favoritos": false,
+      "descricao": "<strong>NVIDIA GeForce RTX 3090</strong><br><br>A placa de vídeo NVIDIA GeForce RTX 3090 é a escolha definitiva para jogos e edição de vídeo de alta qualidade. Com 24 GB de memória GDDR6X, você terá poder de processamento de ponta para todas as suas necessidades.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "NVIDIA GeForce RTX 3070 Ti",
+      "preco": 3849.99,
+      "quantidade": 14,
+      "resumo": "Placa de vídeo de alto desempenho com 8 GB de memória GDDR6X",
+      "imagem": "https://www.custompc.com/wp-content/sites/custompc/2021/07/nvidia-geforce-rtx-3070-ti-review-01.jpg",
+      "favoritos": false,
+      "descricao": "<strong>NVIDIA GeForce RTX 3070 Ti</strong><br><br>A placa de vídeo NVIDIA GeForce RTX 3070 Ti oferece desempenho excepcional para jogos e criação de conteúdo. Com 8 GB de memória GDDR6X, você terá gráficos incrivelmente detalhados e suaves.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "NVIDIA GeForce GTX 1660 Super",
+      "preco": 1299.99,
+      "quantidade": 19,
+      "resumo": "Placa de vídeo para jogos com 6 GB de memória GDDR6",
+      "imagem": "https://images.versus.io/objects/nvidia-geforce-gtx-1660-super.front.variety.1576684641045.jpg",
+      "favoritos": false,
+      "descricao": "<strong>NVIDIA GeForce GTX 1660 Super</strong><br><br>A placa de vídeo NVIDIA GeForce GTX 1660 Super oferece uma experiência de jogo incrível com 6 GB de memória GDDR6. Jogue seus jogos favoritos com ótimo desempenho.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "NVIDIA GeForce RTX 3060",
+      "preco": 1899.99,
+      "quantidade": 24,
+      "resumo": "Placa de vídeo de médio alcance com 12 GB de memória GDDR6",
+      "imagem": "https://images.versus.io/objects/nvidia-geforce-rtx-3060.front.variety.1610630274718.jpg",
+      "favoritos": false,
+      "descricao": "<strong>NVIDIA GeForce RTX 3060</strong><br><br>A placa de vídeo NVIDIA GeForce RTX 3060 é a escolha perfeita para jogadores que desejam alto desempenho a um preço acessível. Com 12 GB de memória GDDR6, você terá uma vantagem competitiva.",
+      "categoria": "Periféricos",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "NVIDIA GeForce GTX 1650",
+      "preco": 1199.99,
+      "quantidade": 29,
+      "resumo": "Placa de vídeo econômica com 4 GB de memória GDDR5",
+      "imagem": "https://tpucdn.com/gpu-specs/images/c/3411-front.jpg",
+      "favoritos": false,
+      "descricao": "<strong>NVIDIA GeForce GTX 1650</strong><br><br>A placa de vídeo NVIDIA GeForce GTX 1650 oferece desempenho econômico para jogadores casuais. Com 4 GB de memória GDDR5, você terá uma ótima experiência de jogo sem gastar muito.",
+      "categoria": "Banho",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "AMD Radeon RX 6900 XT",
+      "preco": 2999.99,
+      "quantidade": 10,
+      "resumo": "Placa de vídeo topo de linha com 16 GB de memória GDDR6",
+      "imagem": "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/r/x/rx6900xt-16g3.jpg",
+      "favoritos": false,
+      "descricao": "<strong>AMD Radeon RX 6900 XT</strong><br><br>A placa de vídeo AMD Radeon RX 6900 XT oferece desempenho de ponta para jogadores e criadores de conteúdo. Com 16 GB de memória GDDR6, você terá poder de processamento excepcional para suas tarefas mais exigentes.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "AMD Radeon RX 6700 XT",
+      "preco": 1799.99,
+      "quantidade": 15,
+      "resumo": "Placa de vídeo para jogos com 12 GB de memória GDDR6",
+      "imagem": "https://cdn.awsli.com.br/2500x2500/141/141286/produto/10747754/70411d5266.jpg",
+      "favoritos": false,
+      "descricao": "<strong>AMD Radeon RX 6700 XT</strong><br><br>A placa de vídeo AMD Radeon RX 6700 XT oferece excelente desempenho para jogos e criação de conteúdo. Com 12 GB de memória GDDR6, você terá gráficos incrivelmente detalhados e suaves.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "AMD Radeon RX 6600",
+      "preco": 1499.99,
+      "quantidade": 20,
+      "resumo": "Placa de vídeo de médio alcance com 8 GB de memória GDDR6",
+      "imagem": "https://tpucdn.com/gpu-specs/images/c/3696-front.jpg",
+      "favoritos": false,
+      "descricao": "<strong>AMD Radeon RX 6600</strong><br><br>A placa de vídeo AMD Radeon RX 6600 é perfeita para jogos de médio alcance e criação de conteúdo. Com 8 GB de memória GDDR6, você terá uma experiência sólida.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "AMD Radeon RX 5500 XT",
+      "preco": 1349.99,
+      "quantidade": 25,
+      "resumo": "Placa de vídeo econômica com 4 GB de memória GDDR6",
+      "imagem": "https://asset.msi.com/resize/image/global/product/product_3_20191127101931_5ddddd3400311.png62405b38c58fe0f07fcef2367d8a9ba1/600.png",
+      "favoritos": false,
+      "descricao": "<strong>AMD Radeon RX 5500 XT</strong><br><br>A placa de vídeo AMD Radeon RX 5500 XT oferece desempenho econômico para jogadores casuais. Com 4 GB de memória GDDR6, você terá uma ótima experiência de jogo a um preço acessível.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Intel Core i9-12900K",
+      "preco": 2199.99,
+      "quantidade": 10,
+      "resumo": "Processador de última geração com 16 núcleos e 32 threads",
+      "imagem": "https://img.terabyteshop.com.br/produto/g/processador-intel-core-i9-12900k-32ghz-52ghz-turbo-12-geracao-16-cores-24-threads-lga-1700-bx8071512900k_132455.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Intel Core i9-12900K</strong><br><br>O processador Intel Core i9-12900K é um monstro de desempenho com 16 núcleos e 32 threads. É perfeito para jogos, edição de vídeo e multitarefa pesada. Este processador oferece a melhor experiência para os entusiastas de PC mais exigentes.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nome": "AMD Ryzen 9 5900X",
+      "preco": 2149.99,
+      "quantidade": 15,
+      "resumo": "Processador de alto desempenho com 12 núcleos e 24 threads",
+      "imagem": "https://i.zst.com.br/thumbs/12/18/16/1949930390.jpg",
+      "favoritos": false,
+      "descricao": "<strong>AMD Ryzen 9 5900X</strong><br><br>O processador AMD Ryzen 9 5900X é um dos melhores processadores de alto desempenho do mercado. Com 12 núcleos e 24 threads, ele oferece poder de processamento excepcional para jogos e criação de conteúdo.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "Intel Core i5-12600K",
+      "preco": 1299.99,
+      "quantidade": 20,
+      "resumo": "Processador de médio alcance com 10 núcleos e 20 threads",
+      "imagem": "https://img.terabyteshop.com.br/produto/g/processador-intel-core-i5-12600k-37ghz-49ghz-turbo-12-geracao-10-cores-16-threads-lga-1700-bx8071512600k_132466.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Intel Core i5-12600K</strong><br><br>O processador Intel Core i5-12600K oferece um ótimo desempenho para jogos e tarefas cotidianas. Com 10 núcleos e 20 threads, você terá um sistema ágil e responsivo.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "AMD Ryzen 5 5600X",
+      "preco": 1199.99,
+      "quantidade": 25,
+      "resumo": "Processador de médio alcance com 6 núcleos e 12 threads",
+      "imagem": "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/1/0/100-100000065box21321.jpg",
+      "favoritos": false,
+      "descricao": "<strong>AMD Ryzen 5 5600X</strong><br><br>O processador AMD Ryzen 5 5600X é uma escolha econômica para jogadores e criadores de conteúdo. Com 6 núcleos e 12 threads, você terá um desempenho sólido a um preço acessível.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "nome": "ASUS ROG Strix Z690-E Gaming",
+      "preco": 1299.99,
+      "quantidade": 10,
+      "resumo": "Placa-mãe de alto desempenho para CPUs Intel",
+      "imagem": "https://www.gigantec.com.br/media/catalog/product/cache/526816d9200b6f442572bf66781ece42/2/2/22842_2.jpg",
+      "favoritos": false,
+      "descricao": "<strong>ASUS ROG Strix Z690-E Gaming</strong><br><br>A placa-mãe ASUS ROG Strix Z690-E Gaming é a escolha perfeita para sistemas de alto desempenho com CPUs Intel. Oferece recursos de ponta, incluindo suporte para overclocking e conectividade de última geração.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nome": "MSI MAG B550 Tomahawk",
+      "preco": 1199.99,
+      "quantidade": 15,
+      "resumo": "Placa-mãe de alto desempenho para CPUs AMD",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXrcQjqu5puNMN6VDBMJSZw3HZgvUn2aCTbZS44CnwZ26ZpJp76ZS7gDEsoIMcUslbzCg&usqp=CAU",
+      "favoritos": false,
+      "descricao": "<strong>MSI MAG B550 Tomahawk</strong><br><br>A placa-mãe MSI MAG B550 Tomahawk é uma excelente escolha para sistemas com CPUs AMD. Ela oferece recursos avançados e um design robusto para atender às necessidades de jogadores e criadores de conteúdo.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nome": "GIGABYTE B560M DS3H",
+      "preco": 1129.99,
+      "quantidade": 20,
+      "resumo": "Placa-mãe de médio alcance para CPUs Intel",
+      "imagem": "https://static.gigabyte.com/StaticFile/Image/Global/c33ff3ac30103deb38944b4b94c643b3/Product/27181/png/500",
+      "favoritos": false,
+      "descricao": "<strong>GIGABYTE B560M DS3H</strong><br><br>A placa-mãe GIGABYTE B560M DS3H é uma opção econômica para sistemas com CPUs Intel. Ela oferece desempenho sólido e recursos essenciais para construir um PC eficiente.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nome": "ASRock B450M PRO4",
+      "preco": 89.99,
+      "quantidade": 25,
+      "resumo": "Placa-mãe econômica para CPUs AMD",
+      "imagem": "https://www.asrock.com/mb/photo/B450M%20Pro4-F(M1).png",
+      "favoritos": false,
+      "descricao": "<strong>ASRock B450M PRO4</strong><br><br>A placa-mãe ASRock B450M PRO4 oferece desempenho confiável a um preço acessível. É uma excelente opção para sistemas com CPUs AMD que buscam um ótimo custo-benefício.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "nome": "Corsair Vengeance LPX 32GB (2x16GB) DDR4 3200MHz",
+      "preco": 549.99,
+      "quantidade": 10,
+      "resumo": "Kit de memória DDR4 de alto desempenho",
+      "imagem": "https://cdna.pcpartpicker.com/static/forever/images/product/ae9c14173c768f2fa9ad4d3c957e94a0.256p.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Corsair Vengeance LPX 32GB (2x16GB) DDR4 3200MHz</strong><br><br>O kit de memória Corsair Vengeance LPX é projetado para fornecer desempenho de alto nível para sistemas de jogos e criação de conteúdo. Com 32GB de capacidade e velocidade de 3200MHz, este kit oferece ótimo desempenho.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "nome": "G.SKILL Ripjaws V 16GB (2x8GB) DDR4 3600MHz",
+      "preco": 299.99,
+      "quantidade": 15,
+      "resumo": "Kit de memória DDR4 de médio alcance",
+      "imagem": "https://img.terabyteshop.com.br/produto/g/memoria-ddr4-gskill-ripjaws-v-16gb-2x8gb-3600mhz-f4-3600c17d-16gvk_79459.jpg",
+      "favoritos": false,
+      "descricao": "<strong>G.SKILL Ripjaws V 16GB (2x8GB) DDR4 3600MHz</strong><br><br>Este kit de memória G.SKILL Ripjaws V oferece um equilíbrio perfeito entre desempenho e preço. Com 16GB de capacidade e velocidade de 3600MHz, é uma excelente escolha para sistemas de jogos.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "nome": "Kingston HyperX Fury 8GB DDR4 2666MHz",
+      "preco": 159.99,
+      "quantidade": 20,
+      "resumo": "Módulo de memória DDR4 de baixo custo",
+      "imagem": "https://static9.edstatic.net/product_images/1280x1280/resize/da1b2c56432a97e3357c567f785eb9ae_o5jwwu35.jpg?v=1",
+      "favoritos": false,
+      "descricao": "<strong>Kingston HyperX Fury 8GB DDR4 2666MHz</strong><br><br>Este módulo de memória Kingston HyperX Fury é uma escolha econômica para atualizar seu sistema. Com 8GB de capacidade e velocidade de 2666MHz, ele oferece desempenho confiável a um preço acessível.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "nome": "Crucial Ballistix 4GB DDR4 2400MHz",
+      "preco": 129.99,
+      "quantidade": 25,
+      "resumo": "Módulo de memória DDR4 básico",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_702794-MLU54964752050_042023-O.webp",
+      "favoritos": false,
+      "descricao": "<strong>Crucial Ballistix 4GB DDR4 2400MHz</strong><br><br>Este módulo de memória Crucial Ballistix é uma opção econômica para sistemas básicos. Com 4GB de capacidade e velocidade de 2400MHz, é ideal para tarefas cotidianas.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "nome": "EVGA 600 W1, 80+ WHITE 600W",
+      "preco": 349.99,
+      "quantidade": 10,
+      "resumo": "Fonte de alimentação econômica com 600W de potência",
+      "imagem": "https://images.kabum.com.br/produtos/fotos/99507/fonte-evga-600w-80-plus-bronze-100-br-0600-k__1546628023_g.jpg",
+      "favoritos": false,
+      "descricao": "<strong>EVGA 600 W1, 80+ WHITE 600W</strong><br><br>A fonte de alimentação EVGA 600 W1 é uma opção econômica para fornecer energia confiável ao seu sistema. Com 600W de potência, é adequada para sistemas de nível básico a intermediário.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "nome": "Corsair RM750x, 80+ Gold, 750W",
+      "preco": 509.99,
+      "quantidade": 15,
+      "resumo": "Fonte de alimentação de alta eficiência com 750W de potência",
+      "imagem": "https://m.media-amazon.com/images/I/61LIZOUcjpL._AC_UF894,1000_QL80_.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Corsair RM750x, 80+ Gold, 750W</strong><br><br>A fonte de alimentação Corsair RM750x é uma escolha premium para sistemas de alto desempenho. Com certificação 80+ Gold e 750W de potência, oferece eficiência e confiabilidade excepcionais.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "nome": "Seasonic Focus GX-650, 80+ Gold, 650W",
+      "preco": 699.99,
+      "quantidade": 20,
+      "resumo": "Fonte de alimentação de alta eficiência com 650W de potência",
+      "imagem": "https://d2r9epyceweg5n.cloudfront.net/stores/001/191/459/products/fonte-xpg-650w-pylon650b-bkcbr_1597343671_gg1-aa0e125abb12717c4716884921396013-640-0.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Seasonic Focus GX-650, 80+ Gold, 650W</strong><br><br>A fonte de alimentação Seasonic Focus GX-650 oferece eficiência energética com certificação 80+ Gold. Com 650W de potência, é ideal para sistemas de jogos e criação de conteúdo.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "nome": "Thermaltake Smart 500W, 80+ White",
+      "preco": 239.99,
+      "quantidade": 25,
+      "resumo": "Fonte de alimentação de nível básico com 500W de potência",
+      "imagem": "https://img.terabyteshop.com.br/produto/g/fonte-thermaltake-smart-series-500w-PS-SPD-0500NPCWBZ-W-pfc-ativo-cabos-flat_27159.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Thermaltake Smart 500W, 80+ White</strong><br><br>A fonte de alimentação Thermaltake Smart 500W é uma opção econômica para sistemas de nível básico. Com certificação 80+ White e 500W de potência, é uma escolha confiável para usuários com orçamento limitado.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "nome": "NZXT H510i Compact ATX Mid-Tower",
+      "preco": 779.99,
+      "quantidade": 10,
+      "resumo": "Gabinete ATX compacto com excelente gerenciamento de cabos",
+      "imagem": "https://m.media-amazon.com/images/I/51xCdHUxRCL.jpg",
+      "favoritos": false,
+      "descricao": "<strong>NZXT H510i Compact ATX Mid-Tower</strong><br><br>O gabinete NZXT H510i é uma escolha elegante para sistemas de médio porte. Ele oferece excelente gerenciamento de cabos e suporte a refrigeração líquida. O design compacto o torna adequado para espaços menores.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "nome": "Corsair 4000D Airflow ATX Mid-Tower",
+      "preco": 489.99,
+      "quantidade": 15,
+      "resumo": "Gabinete ATX com excelente fluxo de ar",
+      "imagem": "https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/oficinadosbits/media/uploads/produtos/foto/zoybkvnn/file.png",
+      "favoritos": false,
+      "descricao": "<strong>Corsair 4000D Airflow ATX Mid-Tower</strong><br><br>O gabinete Corsair 4000D oferece excelente fluxo de ar e suporte para ventoinhas e radiadores. É ideal para sistemas que exigem refrigeração eficiente e desempenho.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "nome": "Phanteks Eclipse P400A ATX Mid-Tower",
+      "preco": 399.99,
+      "quantidade": 20,
+      "resumo": "Gabinete ATX com painel frontal em malha",
+      "imagem": "https://m.media-amazon.com/images/I/71De9xd44jL.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Phanteks Eclipse P400A ATX Mid-Tower</strong><br><br>O gabinete Phanteks Eclipse P400A apresenta um painel frontal em malha para melhor fluxo de ar. Com suporte a ventoinhas RGB e configurações de alta performance, é uma escolha versátil para entusiastas de PC.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "nome": "Cooler Master MasterBox Q300L Micro-ATX",
+      "preco": 59.99,
+      "quantidade": 25,
+      "resumo": "Gabinete Micro-ATX compacto com janela lateral",
+      "imagem": "https://cdn.coolermaster.com/media/1037/gallery-2-min-zoom.png",
+      "favoritos": false,
+      "descricao": "<strong>Cooler Master MasterBox Q300L Micro-ATX</strong><br><br>O gabinete Cooler Master MasterBox Q300L é compacto e oferece uma janela lateral transparente. É ideal para sistemas Micro-ATX e configurações com espaço limitado.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "nome": "Samsung 970 EVO 1TB NVMe M.2",
+      "preco": 1029.99,
+      "quantidade": 10,
+      "resumo": "SSD NVMe de alta velocidade com 1TB de capacidade",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUlOPdIxqv1zZiPRE6S9PNdB3vs56m2Y83lNdOsG1xrbXA69S2EDWnJI017x_PO-9uYXk&usqp=CAU",
+      "favoritos": false,
+      "descricao": "<strong>Samsung 970 EVO 1TB NVMe M.2</strong><br><br>O SSD Samsung 970 EVO oferece velocidades de leitura e gravação excepcionais para melhorar o desempenho do sistema. Com 1TB de capacidade, é ideal para armazenar grandes quantidades de dados e jogos.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "nome": "Crucial MX500 500GB SATA 2.5-inch",
+      "preco": 69.99,
+      "quantidade": 15,
+      "resumo": "SSD SATA de 500GB para atualização de sistema",
+      "imagem": "https://m.media-amazon.com/images/I/51LrH43xflL._AC_UF894,1000_QL80_.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Crucial MX500 500GB SATA 2.5-inch</strong><br><br>O SSD Crucial MX500 oferece um equilíbrio entre desempenho e capacidade. Com 500GB de espaço, é perfeito para atualizar laptops e PCs de mesa.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "nome": "Western Digital Blue 250GB M.2 SATA",
+      "preco": 249.99,
+      "quantidade": 20,
+      "resumo": "SSD M.2 SATA de 250GB",
+      "imagem": "https://a-static.mlcdn.com.br/450x450/hd-ssd-m-2-western-digital-wd-blue-250gb-3d-sata-3-wds250g2b0b-00ys70/matroninformatica/2003177/6d9ea1194e8c8e803113bbbe749217d3.jpeg",
+      "favoritos": false,
+      "descricao": "<strong>Western Digital Blue 250GB M.2 SATA</strong><br><br>O SSD Western Digital Blue oferece uma solução de armazenamento rápida e confiável em formato M.2 SATA. Com 250GB de capacidade, é ideal para sistemas compactos.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "nome": "Kingston A2000 1TB NVMe M.2",
+      "preco": 1109.99,
+      "quantidade": 25,
+      "resumo": "SSD NVMe de 1TB em formato M.2",
+      "imagem": "https://m.media-amazon.com/images/I/71FNDqyJZzL.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Kingston A2000 1TB NVMe M.2</strong><br><br>O SSD Kingston A2000 oferece velocidades de leitura e gravação de alta qualidade em formato M.2. Com 1TB de espaço, é ideal para armazenar jogos e aplicativos.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "nome": "Dell S2719DGF 27-inch QHD FreeSync",
+      "preco": 2299.99,
+      "quantidade": 10,
+      "resumo": "Monitor de jogos de 27 polegadas com resolução QHD",
+      "imagem": "https://m.media-amazon.com/images/I/81ONemBAVtL.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Dell S2719DGF 27-inch QHD FreeSync</strong><br><br>O monitor Dell S2719DGF oferece uma experiência de jogo imersiva com sua resolução QHD. Possui taxa de atualização de 144Hz e suporte ao FreeSync para jogos suaves.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "nome": "ASUS VG279Q 27-inch Full HD FreeSync",
+      "preco": 1749.99,
+      "quantidade": 15,
+      "resumo": "Monitor de 27 polegadas com resolução Full HD",
+      "imagem": "https://m.media-amazon.com/images/I/61Udh3mRUZS.jpg",
+      "favoritos": false,
+      "descricao": "<strong>ASUS VG279Q 27-inch Full HD FreeSync</strong><br><br>O monitor ASUS VG279Q é perfeito para jogadores que buscam alta taxa de atualização. Com 27 polegadas e resolução Full HD, oferece jogos suaves com suporte ao FreeSync.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "nome": "LG 24MK400H-B 24\" Class HD Monitor",
+      "preco": 1119.99,
+      "quantidade": 20,
+      "resumo": "Monitor HD de 24 polegadas com alta qualidade de imagem",
+      "imagem": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/f4474a51-564b-41f2-a983-a411de3b5fb6/md06029424-large01-jpg",
+      "favoritos": false,
+      "descricao": "<strong>LG 24MK400H-B 24\" Class HD Monitor</strong><br><br>O monitor LG 24MK400H-B oferece uma tela de 24 polegadas com qualidade HD. Ele proporciona uma experiência de visualização nítida e vívida, ideal para tarefas diárias.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "nome": "Acer R240HY bidx 23.8-Inch IPS",
+      "preco": 179.99,
+      "quantidade": 15,
+      "resumo": "Monitor IPS de 23.8 polegadas com design elegante",
+      "imagem": "https://m.media-amazon.com/images/I/91CAvrhwPbL._AC_UF350,350_QL80_.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Acer R240HY bidx 23.8-Inch IPS</strong><br><br>O monitor Acer R240HY bidx oferece uma tela IPS de 23.8 polegadas com um design fino e elegante. Sua qualidade de imagem excepcional o torna perfeito para entretenimento e trabalho.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "nome": "Corsair Hydro Series H100i",
+      "preco": 729.99,
+      "quantidade": 18,
+      "resumo": "Water cooler líquido de alto desempenho",
+      "imagem": "https://images4.kabum.com.br/produtos/fotos/108804/water-cooler-corsair-icue-h100i-pro-xt-hydro-series-120mm-rgb-cw-9060043-ww_1577201550_g.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Corsair Hydro Series H100i</strong><br><br>O Corsair Hydro Series H100i é um water cooler líquido de alto desempenho, projetado para manter seu processador refrigerado mesmo em condições de uso extremo. Com radiador duplo e ventoinhas de alto fluxo de ar, este water cooler oferece resfriamento eficiente e silencioso.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "nome": "NZXT Kraken X63",
+      "preco": 849.99,
+      "quantidade": 22,
+      "resumo": "Water cooler líquido de 280mm com iluminação RGB",
+      "imagem": "https://a-static.mlcdn.com.br/450x450/water-cooler-nzxt-kraken-x63-rgb-280mm-2x-140mm-intel-e-amd-preto-rl-krx63-r1/kabum/155448/3a023058e80f8e305723b9438ede5762.jpeg",
+      "favoritos": false,
+      "descricao": "<strong>NZXT Kraken X63</strong><br><br>O NZXT Kraken X63 é um water cooler líquido de 280mm com iluminação RGB. Ele oferece não apenas excelente desempenho de resfriamento, mas também um visual impressionante com iluminação personalizável.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "nome": "Cooler Master MasterLiquid ML240R",
+      "preco": 619.99,
+      "quantidade": 20,
+      "resumo": "Water cooler líquido de 240mm com iluminação RGB",
+      "imagem": "https://images.kabum.com.br/produtos/fotos/96501/96501_1_1525283795_original.jpg",
+      "favoritos": false,
+      "descricao": "<strong>Cooler Master MasterLiquid ML240R</strong><br><br>O Cooler Master MasterLiquid ML240R é um water cooler líquido de 240mm com iluminação RGB. Ele oferece desempenho eficiente de resfriamento e iluminação personalizável para dar um toque especial ao seu sistema.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "nome": "EVGA CLC 280mm All-In-One",
+      "preco": 139.99,
+      "quantidade": 16,
+      "resumo": "Water cooler líquido de 280mm de alto desempenho",
+      "imagem": "https://images.evga.com/products/gallery/png/400-HY-CL28-V1_XL_4.png",
+      "favoritos": false,
+      "descricao": "<strong>EVGA CLC 280mm All-In-One</strong><br><br>O EVGA CLC 280mm All-In-One é um water cooler líquido de alto desempenho com radiador de 280mm. Ele fornece resfriamento eficiente para o seu processador e é fácil de instalar. Um ótimo complemento para sistemas de alto desempenho.",
+      "categoria": "Cama",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "nome": "Carburador de Santana",
+      "preco": 1057.85,
+      "quantidade": 15,
+      "resumo": "Santana tem carburador",
+      "imagem": "https://static3.tcdn.com.br/img/img_prod/229689/carburador_3e_santana_quantum_versailles_royalle_2_0_gasolina_solex_brosol_3760_1_20201006145012.jpg",
+      "favoritos": true,
+      "descricao": "<strong>Carburador 2E Volkswagen Ford Para Motor AP 1.8 e AP 2.0 à Gasolina</strong>\n\nO carburador é um dos componentes mecânicos mais importantes no sistema de alimentação de combustível de motores a combustão interna. Ele fica responsável por misturar o combustível com o ar que entra no motor, criando uma mistura de ar-combustível que será queimada nos cilindros do motor para gerar energia e movimentação.\n\n",
+      "categoria": "Hardware",
+      "comentarios": [
+        {
+          "idUser": 1,
+          "comentario": "teste",
+          "nota": 5
+        },
+        {
+          "idUser": 1,
+          "comentario": "Não tem carburador",
+          "nota": 1
+        },
+        {
+          "idUser": 1,
+          "comentario": "Tem carburador",
+          "nota": 5
+        }
+      ]
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "valorTotal": 210.9,
+      "idUser": 1,
+      "itens": [
+        {
+          "id": 2,
+          "quantidade": 10
+        },
+        {
+          "id": 1,
+          "quantidade": 10
+        }
+      ]
+    },
+    {
+      "valorTotal": 29.99,
+      "idUser": 1,
+      "itens": [
+        {
+          "idProduto": 1,
+          "quantidade": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "valorTotal": 149.95,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 2,
+          "quantidade": 4
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 3
+    },
+    {
+      "valorTotal": 59.98,
+      "idUser": 3,
+      "itens": [
+        {
+          "idProduto": 2,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 4
+    },
+    {
+      "valorTotal": 29.99,
+      "idUser": 1,
+      "itens": [
+        {
+          "idProduto": 2,
+          "quantidade": 1
+        }
+      ],
+      "id": 5
+    },
+    {
+      "valorTotal": 6649.969999999999,
+      "idUser": 1,
+      "itens": [
+        {
+          "idProduto": 4,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 5,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 6,
+          "quantidade": 1
+        }
+      ],
+      "id": 6
+    },
+    {
+      "valorTotal": 2557.84,
+      "idUser": 5,
+      "itens": [
+        {
+          "idProduto": 45,
+          "quantidade": 1
+        },
+        {
+          "idProduto": 4,
+          "quantidade": 1
+        }
+      ],
+      "id": 7
+    }
+  ]
+}
