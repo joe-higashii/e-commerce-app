@@ -195,7 +195,7 @@ export const NavBar = () => {
           <option value={"Hardware"}>Hardware</option>
           <option value={"Periféricos"}>Periféricos</option>
           <option value={"Cama"}>Cama</option>
-          <option value={"banho"}>banho</option>
+          <option value={"Banho"}>Banho</option>
         </Select>
         {/* SEARCHBAR */}
         <InputGroup borderRadius={5} size="sm">

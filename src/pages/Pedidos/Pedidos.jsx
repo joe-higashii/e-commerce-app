@@ -93,7 +93,25 @@ const Pedidos = () => {
                       <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      {itens.map(({ idProduto, quantidade }) => {
+                      <TableContainer>
+                        <Table>
+                          <Tbody>
+                            <Tr>
+                              <Td>TOTAL PRODUTO(S)</Td>
+                              <Td textAlign={"right"}>R$ {valorTotal.toFixed(2)}</Td>
+                            </Tr>
+                            <Tr>
+                              <Td>DESCONTO</Td>
+                              <Td textAlign={"right"}>R$ 0</Td>
+                            </Tr>
+                            <Tr>
+                              <Td>USUARIO</Td>
+                              <Td textAlign={"right"}>{user.nome}</Td>
+                            </Tr>
+                            <Tr>
+                              <Td>ITENS</Td>
+                              <Td textAlign={"right"}>
+                              {itens.map(({ idProduto, quantidade }) => {
                         const produto = produtos.find(
                           (produto) => produto.id === idProduto
                         );
@@ -126,57 +144,6 @@ const Pedidos = () => {
                         }
                         return null;
                       })}
-                      <TableContainer>
-                        <Table>
-                          <Tbody>
-                            <Tr>
-                              <Td>TOTAL PRODUTO(S)</Td>
-                              <Td textAlign={"right"}>R$ {valorTotal}</Td>
-                            </Tr>
-                            <Tr>
-                              <Td>DESCONTO</Td>
-                              <Td textAlign={"right"}>R$ 0</Td>
-                            </Tr>
-                            <Tr>
-                              <Td>USUARIO</Td>
-                              <Td textAlign={"right"}>{user.nome}</Td>
-                            </Tr>
-                            <Tr>
-                              <Td>ITENS</Td>
-                              <Td textAlign={"right"}>
-                                {itens.map(({ id, pedido }) => {
-                                  const produto = produtos.find(
-                                    (produto) => produto.id === id
-                                  );
-
-                                  if (produto) {
-                                    return (
-                                      <Grid
-                                        key={produto.id}
-                                        h="150px"
-                                        templateRows="repeat(2, 1fr)"
-                                        templateColumns="repeat(5, 1fr)"
-                                        marginBottom="10px"
-                                        gap={3}
-                                      >
-                                        <GridItem rowSpan={2} colSpan={1}>
-                                          <img
-                                            src={produto.imagem}
-                                            alt="Produto"
-                                            width={"80px"}
-                                          />
-                                        </GridItem>
-                                        <GridItem colSpan={4} textAlign="left">
-                                          <h2>{produto.nome}</h2>
-                                        </GridItem>
-                                        <GridItem colSpan={4} textAlign="right">
-                                          <h2>R$ {produto.preco}</h2>
-                                        </GridItem>
-                                      </Grid>
-                                    );
-                                  }
-                                  return null;
-                                })}
                               </Td>
                             </Tr>
                           </Tbody>
